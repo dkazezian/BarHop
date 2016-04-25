@@ -2,6 +2,7 @@ package cs464.barhop;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Spinner;
 
 public class Home_Screen extends AppCompatActivity {
 
