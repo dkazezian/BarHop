@@ -1,6 +1,6 @@
 package cs464.barhop;
 
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Spinner;
 import java.util.ArrayList;
@@ -14,14 +14,14 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 //Example found here: http://www.tutorialspoint.com/android/android_spinner_control.htm
-public class Search extends AppCompatActivity {
+public class Search extends Activity implements OnItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home__screen);
+        setContentView(R.layout.activity_search_page);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner = (Spinner) findViewById(R.id.day_spinner);
 
         // Spinner click listener
         spinner.setOnItemSelectedListener(this);
