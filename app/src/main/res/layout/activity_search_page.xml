@@ -23,11 +23,14 @@
             android:layout_weight="0.57">
 
             <EditText
+                android:id="@+id/editText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:text="Placeholder"
+                android:editable="true"
+            />
         </RelativeLayout>
     </LinearLayout>
 
@@ -38,10 +41,10 @@
         android:layout_weight="0.14">
 
         <Spinner
+            android:id="@+id/spinner"
+            android:prompt="@+id/prompt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/day_spinner"
-            android:prompt="Enter day here"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="0dp"
             android:layout_alignParentTop="true"
@@ -54,11 +57,10 @@
             android:focusable="false"
             android:focusableInTouchMode="false" />
 
-        <Button
+        <Button android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
-            android:id="@+id/button"
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/spinner"
             android:layout_alignStart="@+id/spinner"
