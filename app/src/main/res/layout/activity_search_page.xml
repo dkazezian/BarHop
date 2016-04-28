@@ -28,9 +28,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
-                android:text="Placeholder"
-                android:editable="true"
-            />
+                android:hint="Search name, tags, address..."
+                android:maxLines="1"
+                android:maxLength="120"
+                />
         </RelativeLayout>
     </LinearLayout>
 

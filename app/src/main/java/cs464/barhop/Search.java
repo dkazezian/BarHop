@@ -26,7 +26,7 @@ public class Search extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
-
+        etext = (EditText) findViewById(R.id.editText);
         spinner = (Spinner) findViewById(R.id.spinner);
         adapter = ArrayAdapter.createFromResource(this,R.array.day_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -47,13 +47,12 @@ public class Search extends Activity {
                 selection="-1";
             }
         });
-    }
 
+    }
     public void searchalgorithm(String day){
         ArrayList<Integer> results=new ArrayList<Integer>();
         String filename = "barpageexample"; //Database filename
         String line = null;
-        etext = (EditText) findViewById(R.id.editText);
         String searchstring = etext.getText().toString();
         System.out.print("The text is " + searchstring);
         String delims = "[ ]+";

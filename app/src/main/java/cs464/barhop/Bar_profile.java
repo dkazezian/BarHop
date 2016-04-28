@@ -28,9 +28,7 @@ public class Bar_profile extends AppCompatActivity {
     private BufferedReader input;
 
 
-
-
-    Bar_profile(int linenumber){
+    private void parsebarinfo(int linenumber){
         int go=0;
         try {
             while (go < linenumber) {
