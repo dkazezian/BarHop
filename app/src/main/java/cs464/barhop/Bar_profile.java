@@ -92,7 +92,6 @@ public class Bar_profile extends AppCompatActivity {
 
             reviews="Service: "+ Double.toString(service) +"/n"+"Food: "+ Double.toString(food) +"/n"+"Drinks: "+ Double.toString(drinks) +"/n"+"Atmosphere: "+ Double.toString(atmosphere) +"/n"+"Specials: "+ Double.toString(specials) +"/n";
 
-
         }
         catch(IOException e){
             e.printStackTrace();

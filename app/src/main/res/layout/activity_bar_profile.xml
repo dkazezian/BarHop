@@ -85,11 +85,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="143dp"
-        android:layout_marginBottom="362dp"
+        android:layout_marginTop="122dp"
+        android:layout_marginBottom="466dp"
         android:id="@+id/relativeLayout2"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true">
 
         <TextView
@@ -118,12 +118,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="314dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="380dp"
         android:id="@+id/linearLayout"
         android:weightSum="1"
-        android:layout_alignTop="@+id/relativeLayout2"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/relativeLayout2">
 
         <Button
             android:layout_width="wrap_content"
@@ -153,8 +153,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/linearLayout"
-        android:layout_marginTop="46dp">
+        android:layout_marginTop="57dp"
+        android:layout_alignTop="@+id/linearLayout">
 
         <ScrollView
             android:id="@+id/ScrollInfoBox"
