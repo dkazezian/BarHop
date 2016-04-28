@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Bar_profile extends AppCompatActivity {
@@ -45,12 +46,51 @@ public class Bar_profile extends AppCompatActivity {
             specevents=input.readLine();
             menu=input.readLine();
 
+            String[] speceventsplit=specevents.split(";");
+            specevents="Monday: "+speceventsplit[0]+"\n"+"Tuesday: "+speceventsplit[1]+"\n"+"Wednesday: "+speceventsplit[2]+"\n"+"Thursday: "+speceventsplit[3]+"\n"+"Friday: "+speceventsplit[4]+"\n"+"Saturday: "+speceventsplit[5]+"\n"+"Sunday: "+speceventsplit[6]+"\n";
 
+            ArrayList<Integer> serviceall=new ArrayList<Integer>();
+            double service=0;
+            ArrayList<Integer> foodall=new ArrayList<Integer>();
+            double food=0;
+            ArrayList<Integer> drinksall=new ArrayList<Integer>();
+            double drinks=0;
+            ArrayList<Integer> atmosphereall=new ArrayList<Integer>();
+            double atmosphere=0;
+            ArrayList<Integer> specialsall=new ArrayList<Integer>();
+            double specials=0;
 
+            String[] reviewsplit=reviews.split(",");
+            for (int i=0; i<reviewsplit.length; i++){
+                String[] reviewsplitsplit=reviewsplit[i].split(" ");
+                serviceall.add(Integer.parseInt(reviewsplitsplit[0]));
+                foodall.add(Integer.parseInt(reviewsplitsplit[1]));
+                drinksall.add(Integer.parseInt(reviewsplitsplit[2]));
+                atmosphereall.add(Integer.parseInt(reviewsplitsplit[3]));
+                specialsall.add(Integer.parseInt(reviewsplitsplit[4]));
+                }
+            for (int i=0; i<serviceall.size();i++){
+                service=service+serviceall.get(i);
+            }
+            service=service/((double)serviceall.size());
+            for (int i=0; i<foodall.size();i++){
+                food=food+foodall.get(i);
+            }
+            food=food/((double)foodall.size());
+            for (int i=0; i<drinksall.size();i++){
+                drinks=drinks+drinksall.get(i);
+            }
+            drinks=drinks/((double)drinksall.size());
+            for (int i=0; i<atmosphereall.size();i++){
+                atmosphere=atmosphere+atmosphereall.get(i);
+            }
+            atmosphere=atmosphere/((double)atmosphereall.size());
+            for (int i=0; i<specialsall.size();i++){
+                specials=specials+specialsall.get(i);
+            }
+            specials=specials/((double)specialsall.size());
 
-
-
-
+            reviews="Service: "+ Double.toString(service) +"/n"+"Food: "+ Double.toString(food) +"/n"+"Drinks: "+ Double.toString(drinks) +"/n"+"Atmosphere: "+ Double.toString(atmosphere) +"/n"+"Specials: "+ Double.toString(specials) +"/n";
 
 
         }
