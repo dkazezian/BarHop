@@ -12,8 +12,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="475dp"
-        android:layout_alignParentBottom="true">
+        android:layout_above="@+id/linearLayout"
+        android:layout_marginBottom="23dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +60,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/textView9"
             android:layout_centerVertical="true"
-            android:layout_alignStart="@+id/textView6" />
+            android:layout_alignStart="@+id/textView6"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -77,15 +78,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/textView11"
             android:layout_below="@+id/textView9"
-            android:layout_alignStart="@+id/textView9" />
+            android:layout_alignStart="@+id/textView9"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/relativeLayout"
-        android:layout_marginTop="62dp"
-        android:layout_alignTop="@+id/linearLayout"></RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -93,9 +88,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="143dp"
-        android:layout_marginBottom="434dp"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/relativeLayout2">
+        android:layout_marginBottom="362dp"
+        android:id="@+id/relativeLayout2"
+        android:layout_alignParentBottom="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -109,11 +104,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/textView13"
             android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/textView12"
-            android:layout_marginStart="52dp" />
+            android:layout_marginStart="16dp"
+            android:layout_alignTop="@+id/textView12" />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -121,12 +118,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginBottom="365dp"
-        android:layout_alignTop="@+id/relativeLayout2"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="314dp"
         android:id="@+id/linearLayout"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_alignTop="@+id/relativeLayout2"
+        android:layout_alignParentBottom="true">
 
         <Button
             android:layout_width="wrap_content"
@@ -150,4 +147,47 @@
             android:layout_weight="0.25" />
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/linearLayout"
+        android:layout_marginTop="46dp">
+
+        <ScrollView
+            android:id="@+id/ScrollInfoBox"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:fillViewport="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                android:id="@+id/InfoBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+        </ScrollView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Review"
+            android:id="@+id/Review"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="115dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="124dp"
+            android:visibility="invisible"/>
+
+
+
+    </RelativeLayout>
+
 </RelativeLayout>

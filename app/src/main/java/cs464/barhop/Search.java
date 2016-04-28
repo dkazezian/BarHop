@@ -28,7 +28,7 @@ public class Search extends Activity {
         setContentView(R.layout.activity_search_page);
 
         spinner = (Spinner) findViewById(R.id.spinner);
-        adapter = ArrayAdapter.createFromResource(this,R.array.planets_array, android.R.layout.simple_spinner_item);
+        adapter = ArrayAdapter.createFromResource(this,R.array.day_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -51,7 +51,7 @@ public class Search extends Activity {
 
     public void searchalgorithm(String day){
         ArrayList<Integer> results=new ArrayList<Integer>();
-        String filename = "/BarHop/app/assets/barpageexample"; //Database filename
+        String filename = "barpageexample"; //Database filename
         String line = null;
         etext = (EditText) findViewById(R.id.editText);
         String searchstring = etext.getText().toString();
@@ -125,7 +125,7 @@ public class Search extends Activity {
     private boolean findspecialOnDay(int linenumber, int day){
         boolean bool=false;
         String specialsline="";
-        String filename = "/BarHop/app/assets/barpageexample";
+        String filename = "barpageexample";
         Scanner s = null;
         Scanner s2=null;
         try {
