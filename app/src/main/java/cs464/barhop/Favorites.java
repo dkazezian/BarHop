@@ -122,7 +122,7 @@ public class Favorites extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bar_profile);
+        setContentView(R.layout.activity_favorites);
         try {
             reader = getAssets().open("myFavorites.txt");
             input = new BufferedReader(new InputStreamReader(reader));

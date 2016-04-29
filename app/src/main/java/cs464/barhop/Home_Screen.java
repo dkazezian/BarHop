@@ -3,11 +3,19 @@ package cs464.barhop;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
 public class Home_Screen extends AppCompatActivity {
+
+
+    private Toolbar apptoolbar;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,10 @@ public class Home_Screen extends AppCompatActivity {
                 Home_Screen.this.startActivity(activityChangeIntent);
             }
         });
+
+        apptoolbar=(Toolbar)findViewById((R.id.toolbar));
+        setSupportActionBar(apptoolbar);
+
     }
 
 }

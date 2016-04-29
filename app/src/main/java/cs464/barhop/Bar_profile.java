@@ -106,20 +106,6 @@ public class Bar_profile extends AppCompatActivity {
             reader = getAssets().open("barpageexample");
             input = new BufferedReader(new InputStreamReader(reader));
             parsebarinfo(1);
-
-
-
-            barname=input.readLine();
-            address=input.readLine();
-            hours=input.readLine();
-            phone=input.readLine();
-            tags=input.readLine();
-            reviews=input.readLine();
-            specevents=input.readLine();
-            menu=input.readLine();
-
-
-
             final TextView namebox = (TextView) findViewById(R.id.textView);
             final TextView addressbox = (TextView) findViewById(R.id.textView6);
             final TextView hoursbox = (TextView) findViewById(R.id.textView9);
