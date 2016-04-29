@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 
 public class Favorites extends AppCompatActivity {
-  /*  public int lineNumber;
+    public int lineNumber;
     public String BarName;
   //  public String[] Bars;
    // private List<Favorite>;
@@ -209,5 +209,5 @@ public class Favorites extends AppCompatActivity {
        // list.get(1).setSelected(true);
         return list;
     }
-    */
+
 }

@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 public class Home_Screen extends AppCompatActivity {
 
 
@@ -33,8 +35,16 @@ public class Home_Screen extends AppCompatActivity {
 
         nearbyme.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent activityChangeIntent = new Intent(Home_Screen.this, Searchresults.class);
-                Home_Screen.this.startActivity(activityChangeIntent);
+                Intent intent = new Intent(Home_Screen.this, Searchresults.class);
+                ArrayList<Integer> results= new ArrayList<Integer>();
+                results.add(2);
+                results.add(12);
+                results.add(22);
+                Bundle b = new Bundle();
+                b.putIntegerArrayList("searchresults", results);
+                intent.putExtras(b);
+                Home_Screen.this.startActivity(intent);
+                finish();
             }
         });
 
@@ -45,8 +55,8 @@ public class Home_Screen extends AppCompatActivity {
             }
         });
 
-       // apptoolbar=(Toolbar)findViewById((R.id.toolbar));
-       // setSupportActionBar(apptoolbar);
+        /*apptoolbar=(Toolbar)findViewById((R.id.toolbar));
+        setSupportActionBar(apptoolbar);*/
 
     }
 
