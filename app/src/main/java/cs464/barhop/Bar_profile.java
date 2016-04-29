@@ -2,6 +2,8 @@ package cs464.barhop;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -103,6 +105,36 @@ public class Bar_profile extends AppCompatActivity {
         try {
             reader = getAssets().open("barpageexample");
             input = new BufferedReader(new InputStreamReader(reader));
+            parsebarinfo(1);
+
+
+
+            barname=input.readLine();
+            address=input.readLine();
+            hours=input.readLine();
+            phone=input.readLine();
+            tags=input.readLine();
+            reviews=input.readLine();
+            specevents=input.readLine();
+            menu=input.readLine();
+
+
+
+            final TextView namebox = (TextView) findViewById(R.id.textView);
+            final TextView addressbox = (TextView) findViewById(R.id.textView6);
+            final TextView hoursbox = (TextView) findViewById(R.id.textView9);
+            final TextView phonebox = (TextView) findViewById(R.id.textView11);
+            final TextView tagsbox = (TextView) findViewById(R.id.textView13);
+            final TextView infobox = (TextView) findViewById(R.id.InfoBox);
+            namebox.setText(barname);
+            addressbox.setText(address);
+            hoursbox.setText(hours);
+            phonebox.setText(phone);
+            tagsbox.setText(tags);
+            infobox.setText(specevents);
+
+
+
         }
         catch(IOException e){
             e.printStackTrace();

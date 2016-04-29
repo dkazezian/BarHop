@@ -35,7 +35,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Example Bar"
+        android:text="Example Bar\n Hours: 7pm-9pm\n Distance: .7m"
         android:id="@+id/exampleButt"
         android:layout_below="@+id/textView2"
         android:layout_alignEnd="@+id/textView2"
