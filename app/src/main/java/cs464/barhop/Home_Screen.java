@@ -45,8 +45,8 @@ public class Home_Screen extends AppCompatActivity {
             }
         });
 
-        apptoolbar=(Toolbar)findViewById((R.id.toolbar));
-        setSupportActionBar(apptoolbar);
+       // apptoolbar=(Toolbar)findViewById((R.id.toolbar));
+       // setSupportActionBar(apptoolbar);
 
     }
 

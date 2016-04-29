@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 
 public class Favorites extends AppCompatActivity {
-    public int lineNumber;
+  /*  public int lineNumber;
     public String BarName;
   //  public String[] Bars;
    // private List<Favorite>;
@@ -97,7 +97,7 @@ public class Favorites extends AppCompatActivity {
             PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
 
             String line;
-            Favorite Create=new Favorite(Nam,barId)
+            Favorite Create=new Favorite(Nam,barId);
             //Read from the original file and write to the new
             //unless content matches data to be removed.
             while ((line = br.readLine()) != null) {
@@ -209,4 +209,5 @@ public class Favorites extends AppCompatActivity {
        // list.get(1).setSelected(true);
         return list;
     }
+    */
 }

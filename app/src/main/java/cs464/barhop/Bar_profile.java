@@ -1,7 +1,9 @@
 package cs464.barhop;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -90,7 +92,12 @@ public class Bar_profile extends AppCompatActivity {
             }
             specials=specials/((double)specialsall.size());
 
-            reviews="Service: "+ Double.toString(service) +"/n"+"Food: "+ Double.toString(food) +"/n"+"Drinks: "+ Double.toString(drinks) +"/n"+"Atmosphere: "+ Double.toString(atmosphere) +"/n"+"Specials: "+ Double.toString(specials) +"/n";
+            reviews="Service: "+ Double.toString(service) +"\n"+"Food: "+ Double.toString(food) +"\n"+"Drinks: "+ Double.toString(drinks) +"\n"+"Atmosphere: "+ Double.toString(atmosphere) +"\n"+"Specials: "+ Double.toString(specials) +"\n";
+            String[] menusplit=menu.split(",");
+            menu="";
+            for (int i=0; i<menusplit.length; i++){
+                menu=menu+menusplit[i]+"\n";
+            }
 
         }
         catch(IOException e){
@@ -119,7 +126,24 @@ public class Bar_profile extends AppCompatActivity {
             tagsbox.setText(tags);
             infobox.setText(specevents);
 
-
+            final Button menubutt = (Button) findViewById(R.id.button5);
+            menubutt.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    infobox.setText(menu);
+                }
+            });
+            final Button speceventbutt = (Button) findViewById(R.id.button3);
+            speceventbutt.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    infobox.setText(specevents);
+                }
+            });
+            final Button reviewbutt = (Button) findViewById(R.id.button4);
+            reviewbutt.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    infobox.setText(reviews);
+                }
+            });
 
         }
         catch(IOException e){
