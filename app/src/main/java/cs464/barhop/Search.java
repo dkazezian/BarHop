@@ -2,7 +2,9 @@ package cs464.barhop;
 import java.io.*;
 import java.util.Scanner;
 //import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +49,7 @@ public class Search extends Activity {
                 selection="-1";
             }
         });
+
 
     }
     public void searchalgorithm(String day){
