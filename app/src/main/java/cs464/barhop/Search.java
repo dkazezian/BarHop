@@ -1,7 +1,7 @@
 package cs464.barhop;
 import java.io.*;
 import java.util.Scanner;
-//import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -17,11 +17,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.EditText;
+import android.content.Intent;
 //Example found here: http://www.tutorialspoint.com/android/android_spinner_control.htm
-public class Search extends Activity {
+public class Search extends AppCompatActivity {
     EditText etext;
     Spinner spinner;
     String selection;
+    Button btn;
     ArrayAdapter<CharSequence> adapter;
 
     @Override
@@ -29,6 +31,7 @@ public class Search extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_page);
         etext = (EditText) findViewById(R.id.editText);
+        btn = (Button) findViewById(R.id.search_button);
         spinner = (Spinner) findViewById(R.id.spinner);
         adapter = ArrayAdapter.createFromResource(this,R.array.day_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -50,9 +53,24 @@ public class Search extends Activity {
             }
         });
 
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Search.this, Searchresults.class);
+                ArrayList<Integer> results= searchalgorithm(selection);
+                Bundle b = new Bundle();
+                b.putIntegerArrayList("searchresults", results);
+                intent.putExtras(b);
+                Search.this.startActivity(intent);
+                finish();
+            }
+        });
+
+
+
 
     }
-    public void searchalgorithm(String day){
+    public ArrayList<Integer> searchalgorithm(String day){
         ArrayList<Integer> results=new ArrayList<Integer>();
         String filename = "barpageexample"; //Database filename
         String line = null;
@@ -123,6 +141,7 @@ public class Search extends Activity {
             }
 
         }
+        return results;
     }
     private boolean findspecialOnDay(int linenumber, int day){
         boolean bool=false;
