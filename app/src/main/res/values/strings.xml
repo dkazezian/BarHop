@@ -12,4 +12,12 @@
         <item>Sat</item>
         <item>Sun</item>
     </string-array>
+
+
+    <!--Bottom bar strings-->
+    <string name="bottom_bar_search"> Search</string>
+    <string name="bottom_bar_nearby"> Nearby</string>
+    <string name="bottom_bar_favorites"> Favorites</string>
+
+
 </resources>

@@ -2,7 +2,36 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#CCC">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#33cc33">
+    <item
+        android:id="@+id/bottom_bar_search"
+        android:icon="@+mipmap/search.png"
+        android:title="Search"
+        app:showAsAction="always"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5px"
+        android:paddingRight="5px" />
+    <item
+        android:id="@+id/bottom_bar_nearby"
+        android:title="Nearby"
+        android:icon="@+mipmap/nearby.png"
+        app:showAsAction="always"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5px"
+        android:paddingRight="5px" />
+    <item
+        android:id="@+id/bottom_bar_favorites"
+        android:icon="@+mipmap/favorites.png"
+        android:title="Favorites"
+
+        app:showAsAction="always"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5px"
+        android:paddingRight="5px" />
 
 
 </android.support.v7.widget.Toolbar>
