@@ -171,7 +171,7 @@ public class Favorites extends ListActivity {
             }
 
             //Rename the new file to the filename the original file had.
-            if (!tempFile.renameTo(myFavorites))
+            if (!tempFile.renameTo(myFavorites)){}
                // System.out.println("Could not rename file");
 
         } catch (FileNotFoundException ex) {
