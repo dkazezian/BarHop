@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#33cc33"
-    android:paddingLeft="60dp"
+    android:paddingLeft="35dp"
     android:paddingRight="60dp"
     android:layout_alignParentBottom="true">
     <Button
@@ -18,6 +18,10 @@
         android:paddingRight="25px"
         android:layout_width="90dp"
         android:layout_height="50dp" />
+    <View
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:layout_weight="1" />
     <Button
         android:id="@+id/bottom_bar_nearby"
 
@@ -30,6 +34,10 @@
         android:layout_width="90dp"
         android:layout_height="50dp"
         />
+    <View
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:layout_weight="1" />
     <Button
         android:id="@+id/bottom_bar_favorites"
         android:background="@drawable/favorites"
@@ -37,8 +45,8 @@
 
         app:showAsAction="always"
 
-        android:paddingLeft="25px"
-        android:paddingRight="25px"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         android:layout_width="90dp"
         android:layout_height="50dp"
         />
