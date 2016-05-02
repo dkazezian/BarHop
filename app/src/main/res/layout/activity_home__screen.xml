@@ -7,8 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cs464.barhop.Home_Screen">
-   <include android:id="@+id/toolbar" layout="@layout/toolbar" />
+    tools:context="cs464.barhop.Home_Screen"
+    android:background="#33cc33">
+
 
     <Button
         android:layout_below="@+id/toolbar"
@@ -21,9 +22,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="399dp"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        />
 
     <Button
+
+        android:background="@drawable/location"
         android:layout_below="@+id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,6 +41,7 @@
         android:layout_alignTop="@+id/search" />
 
     <Button
+        android:background="#33cc33"
         android:layout_below="@+id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,4 +53,5 @@
         android:layout_marginTop="165dp"
         android:layout_alignTop="@+id/nearbyMe"
         android:layout_alignParentBottom="true" />
+
 </RelativeLayout>

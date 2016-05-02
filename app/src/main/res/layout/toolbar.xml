@@ -4,37 +4,44 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#33cc33"
-    android:paddingLeft="60dp">
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp"
+    android:layout_alignParentBottom="true">
     <Button
         android:id="@+id/bottom_bar_search"
+        android:background="@drawable/search1"
 
-        android:text="@string/bottom_bar_search"
         android:title="@string/bottom_bar_search"
         app:showAsAction="always"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5px"
-        android:paddingRight="5px" />
+
+        android:paddingLeft="25px"
+        android:paddingRight="25px"
+        android:layout_width="90dp"
+        android:layout_height="50dp" />
     <Button
         android:id="@+id/bottom_bar_nearby"
-        android:text="@string/bottom_bar_nearby"
-        android:title="@string/bottom_bar_nearby"
 
+        android:title="@string/bottom_bar_nearby"
+        android:background="@drawable/location"
         app:showAsAction="always"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5px"
-        android:paddingRight="5px" />
+
+        android:paddingLeft="25px"
+        android:paddingRight="25px"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        />
     <Button
         android:id="@+id/bottom_bar_favorites"
-
+        android:background="@drawable/favorites"
         android:title="@string/bottom_bar_favorites"
-        android:text="@string/bottom_bar_favorites"
+
         app:showAsAction="always"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5px"
-        android:paddingRight="5px" />
+
+        android:paddingLeft="25px"
+        android:paddingRight="25px"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        />
 
 
 </android.support.v7.widget.Toolbar>

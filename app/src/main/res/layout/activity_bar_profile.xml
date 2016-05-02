@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,7 +10,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="55dp"
     tools:context="cs464.barhop.Bar_profile">
 
     <RelativeLayout
@@ -178,4 +182,7 @@
 
     </RelativeLayout>
 
+
 </RelativeLayout>
+<include android:id="@+id/toolbar" layout="@layout/toolbar" />
+    </RelativeLayout>
