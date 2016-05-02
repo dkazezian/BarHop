@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 
@@ -46,7 +47,7 @@ public class Favorites extends ListActivity {
         try {
             String line = input.readLine();
 
-            while (line != null) {
+            while (scan.hasNextLine()) {
                 BarName = scan.next();
                 lineNumber = scan.nextInt();
                 Favorite temp = new Favorite(BarName, lineNumber);
@@ -208,6 +209,15 @@ public class Favorites extends ListActivity {
 
 
         setContentView(R.layout.activity_favorites);
+
+    }
+    public void searchmethod(View veiw){
+        Context context = getApplicationContext();
+        CharSequence text = "Hello toast!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
 
     }
 
