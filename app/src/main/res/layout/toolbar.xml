@@ -3,30 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#33cc33">
-    <item
+    android:background="#33cc33"
+    android:paddingLeft="60dp">
+    <Button
         android:id="@+id/bottom_bar_search"
-        android:icon="@+mipmap/search.png"
-        android:title="Search"
-        app:showAsAction="always"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5px"
-        android:paddingRight="5px" />
-    <item
-        android:id="@+id/bottom_bar_nearby"
-        android:title="Nearby"
-        android:icon="@+mipmap/nearby.png"
-        app:showAsAction="always"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5px"
-        android:paddingRight="5px" />
-    <item
-        android:id="@+id/bottom_bar_favorites"
-        android:icon="@+mipmap/favorites.png"
-        android:title="Favorites"
 
+        android:text="@string/bottom_bar_search"
+        android:title="@string/bottom_bar_search"
+        app:showAsAction="always"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5px"
+        android:paddingRight="5px" />
+    <Button
+        android:id="@+id/bottom_bar_nearby"
+        android:text="@string/bottom_bar_nearby"
+        android:title="@string/bottom_bar_nearby"
+
+        app:showAsAction="always"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5px"
+        android:paddingRight="5px" />
+    <Button
+        android:id="@+id/bottom_bar_favorites"
+
+        android:title="@string/bottom_bar_favorites"
+        android:text="@string/bottom_bar_favorites"
         app:showAsAction="always"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
