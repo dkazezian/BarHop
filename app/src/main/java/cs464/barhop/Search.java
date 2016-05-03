@@ -196,6 +196,25 @@ public class Search extends AppCompatActivity {
         }
         return bool;
     }
+    public void searchmethod(View veiw){
+        //donothing
+    }
+    public void nearbymethod(View veiw){
+        Intent intent = new Intent(Search.this, Searchresults.class);
+        ArrayList<Integer> results= new ArrayList<Integer>();
+        results.add(2);
+        results.add(12);
+        results.add(22);
+        Bundle b = new Bundle();
+        b.putIntegerArrayList("searchresults", results);
+        intent.putExtras(b);
+        Search.this.startActivity(intent);
+        finish();
+    }
+    public void favemethod(View veiw){
+        Intent activityChangeIntent = new Intent(Search.this, Favorites.class);
+        Search.this.startActivity(activityChangeIntent);
+    }
 
     private String findBarNameByLineNumber(int linenumber){
         String barname="";

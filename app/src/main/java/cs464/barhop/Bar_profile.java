@@ -150,6 +150,26 @@ public class Bar_profile extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    public void searchmethod(View veiw){
+        Intent activityChangeIntent = new Intent(Bar_profile.this, Search.class);
+        Bar_profile.this.startActivity(activityChangeIntent);
+    }
+    public void nearbymethod(View veiw){
+        Intent intent = new Intent(Bar_profile.this, Searchresults.class);
+        ArrayList<Integer> results= new ArrayList<Integer>();
+        results.add(2);
+        results.add(12);
+        results.add(22);
+        Bundle b = new Bundle();
+        b.putIntegerArrayList("searchresults", results);
+        intent.putExtras(b);
+        Bar_profile.this.startActivity(intent);
+        finish();
+    }
+    public void favemethod(View veiw){
+        Intent activityChangeIntent = new Intent(Bar_profile.this, Favorites.class);
+        Bar_profile.this.startActivity(activityChangeIntent);
+    }
 
 
 

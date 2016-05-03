@@ -86,6 +86,26 @@ public class Searchresults extends AppCompatActivity {
         });
 
     }
+    public void searchmethod(View veiw){
+        Intent activityChangeIntent = new Intent(Searchresults.this, Search.class);
+        Searchresults.this.startActivity(activityChangeIntent);
+    }
+    public void nearbymethod(View veiw){
+        Intent intent = new Intent(Searchresults.this, Searchresults.class);
+        ArrayList<Integer> results= new ArrayList<Integer>();
+        results.add(2);
+        results.add(12);
+        results.add(22);
+        Bundle b = new Bundle();
+        b.putIntegerArrayList("searchresults", results);
+        intent.putExtras(b);
+        Searchresults.this.startActivity(intent);
+        finish();
+    }
+    public void favemethod(View veiw){
+        Intent activityChangeIntent = new Intent(Searchresults.this, Favorites.class);
+        Searchresults.this.startActivity(activityChangeIntent);
+    }
 
 
 
