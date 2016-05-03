@@ -46,6 +46,7 @@
 
 
     <include android:id="@+id/toolbar" layout="@layout/toolbar" />
+<<<<<<< HEAD
 </RelativeLayout> -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
