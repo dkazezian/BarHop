@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -23,9 +24,9 @@ public class Home_Screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__screen);
-        final Button search = (Button) findViewById(R.id.search);
-        final Button nearbyme = (Button) findViewById(R.id.nearbyMe);
-        final Button favorites = (Button) findViewById(R.id.favorites);
+        final ImageButton search = (ImageButton) findViewById(R.id.search);
+        final ImageButton nearbyme = (ImageButton) findViewById(R.id.nearbyMe);
+        final ImageButton favorites = (ImageButton) findViewById(R.id.favorites);
         search.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent activityChangeIntent = new Intent(Home_Screen.this, Search.class);

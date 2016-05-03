@@ -34,6 +34,7 @@
         android:paddingRight="25px"
         android:layout_width="90dp"
         android:layout_height="50dp"
+        android:onClick="nearbymethod"
         />
     <View
         android:layout_width="25dp"
@@ -50,6 +51,7 @@
         android:paddingRight="25dp"
         android:layout_width="90dp"
         android:layout_height="50dp"
+        android:onClick="favemethod"
         />
 
 

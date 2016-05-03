@@ -2,6 +2,7 @@ package cs464.barhop;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -212,13 +214,40 @@ public class Favorites extends ListActivity {
 
     }
     public void searchmethod(View veiw){
-        Context context = getApplicationContext();
-        CharSequence text = "Hello toast!";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
+                Intent activityChangeIntent = new Intent(Favorites.this, Search.class);
+                Favorites.this.startActivity(activityChangeIntent);
+    }
+    public void nearbymethod(View veiw){
+        Intent intent = new Intent(Favorites.this, Searchresults.class);
+        ArrayList <Integer> finalresults=new ArrayList();
+        finalresults.add(1);
+        finalresults.add(11);
+        finalresults.add(21);
+        finalresults.add(31);
+        finalresults.add(41);
+        finalresults.add(51);
+        finalresults.add(61);
+        finalresults.add(71);
+        finalresults.add(81);
+        finalresults.add(91);
+        finalresults.add(101);
+        finalresults.add(111);
+        finalresults.add(121);
+        finalresults.add(131);
+        finalresults.add(141);
+        finalresults.add(151);
+        finalresults.add(161);
+        finalresults.add(171);
+        finalresults.add(181);
+        finalresults.add(191);
+        Bundle b = new Bundle();
+        b.putIntegerArrayList("searchresults", finalresults);
+        intent.putExtras(b);
+        Favorites.this.startActivity(intent);
+        finish();
+    }
+    public void favemethod(View veiw){
+        //donothing
     }
 
     private ArrayList<String> getFavorites() {
