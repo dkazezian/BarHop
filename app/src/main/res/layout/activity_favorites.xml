@@ -9,7 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="110px">
-
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentLeft="false">
+        </ListView>
 
 
 
@@ -30,6 +38,7 @@
         android:layout_marginRight="10px"
         android:checked="false">
     </CheckBox>
+
 
 
     </RelativeLayout>
