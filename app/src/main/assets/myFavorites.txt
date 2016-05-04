@@ -1,2 +1,2 @@
-Bondi 12
-Lucky_Joe's 22
+Bondi,12
+Lucky Joe's,22

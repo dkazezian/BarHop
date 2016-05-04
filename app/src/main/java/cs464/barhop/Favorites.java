@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Favorites extends ListActivity implements android.widget.CompoundButton.OnCheckedChangeListener{
+public class Favorites extends AppCompatActivity implements android.widget.CompoundButton.OnCheckedChangeListener{
     ListView lv;
     ArrayList<Favorite> favoritesList;
     FavoritesAdapter favAdapter;
@@ -49,19 +49,20 @@ public class Favorites extends ListActivity implements android.widget.CompoundBu
 
 
     private void loadFavorites() {
-        Scanner scan = new Scanner(reader);
+
         try {
             String line = input.readLine();
 
-            while (scan.hasNextLine()) {
-                BarName = scan.next();
-                lineNumber = scan.nextInt();
-                Favorite temp = new Favorite(BarName, lineNumber);
-                favorites.add(temp);
+            while (line != null) {
+                String temp[] = line.split(",");
+                BarName=temp[0];
+                lineNumber = Integer.parseInt(temp[1]);
+                Favorite tem = new Favorite(BarName, lineNumber);
+                favorites.add(tem);
                 selected.add(false);
 
 
-                line = scan.nextLine();
+                line = input.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -203,7 +204,9 @@ public class Favorites extends ListActivity implements android.widget.CompoundBu
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorites);
+
+
+
         try {
 
             reader = getAssets().open("myFavorites.txt");
@@ -213,8 +216,9 @@ public class Favorites extends ListActivity implements android.widget.CompoundBu
         } catch (IOException e) {
             e.printStackTrace();
         }
-        lv = (ListView)findViewById(R.id.listView);
 
+        lv = (ListView)findViewById(R.id.listView);
+        setContentView(R.layout.activity_favorites);
 
 
 

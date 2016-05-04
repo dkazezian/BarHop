@@ -29,7 +29,7 @@
     <ImageButton
 
         android:src="@drawable/location1"
-        android:layout_width="700px"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:text="@string/bottom_bar_nearby"
         android:textAlignment="textStart"
