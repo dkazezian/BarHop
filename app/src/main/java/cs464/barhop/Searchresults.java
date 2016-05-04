@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -28,11 +29,11 @@ public class Searchresults extends AppCompatActivity {
     BufferedReader input = null;
     String barname = "";
     String distance = "";
-    Bundle b = getIntent().getExtras();
     ArrayList<Integer> results;
+    Bundle b = null;
     //AssetManager assetManager = getAssets();
     private InputStream reader;
-    private ArrayAdapter<Button> listAdapter ;
+    private ArrayAdapter<Button> listAdapter;
 
     public static boolean isNumeric(String str){
         try{
@@ -48,6 +49,7 @@ public class Searchresults extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchresults);
+        b = getIntent().getExtras();
         results=b.getIntegerArrayList("searchresults");
         ArrayList <Button> buttonarray=new ArrayList<Button>();
         listAdapter = new ArrayAdapter<Button>(this, R.layout.buttonlayout, buttonarray);
@@ -57,9 +59,11 @@ public class Searchresults extends AppCompatActivity {
 
 
                 //ArrayAdapter<Button> baradapter =
-                ListView barlist = (ListView) findViewById(R.id.testlistview);
+                //ListView barlist = (ListView) findViewById(R.id.testlistview);
+                LinearLayout linlayout = (LinearLayout) findViewById(R.id.searchlayout);
                 for (int i =0; i<results.size(); i++) {
                     Button barbutton = (Button) new Button(this);
+                    barbutton.setId(i);
                     int go = 0;
                     int linenumber = results.get(i);
 
@@ -75,12 +79,11 @@ public class Searchresults extends AppCompatActivity {
                     input.readLine();
                     input.readLine();
                     input.readLine();
-                    input.readLine();
                     String distance = input.readLine();
                     String bartext=barname+"\n Hours: "+hours+ "\n Distance: "+distance;
                     barbutton.setText(bartext);
                     //barlist.add
-                    listAdapter.add(barbutton);
+                    linlayout.addView(barbutton);
                     reader = getAssets().open("bars.txt");
                     input = new BufferedReader(new InputStreamReader(reader));
                 }

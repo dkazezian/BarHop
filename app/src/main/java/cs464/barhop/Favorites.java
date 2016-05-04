@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -38,7 +39,7 @@ import java.util.Scanner;
 public class Favorites extends AppCompatActivity implements android.widget.CompoundButton.OnCheckedChangeListener{
     ListView lv;
     ArrayList<Favorite> favoritesList;
-    FavoritesAdapter favAdapter;
+    //FavoritesAdapter favAdapter;
     public int lineNumber;
     public String BarName;
     //  public String[] Bars;
@@ -216,28 +217,46 @@ public class Favorites extends AppCompatActivity implements android.widget.Compo
             reader = getAssets().open("myFavorites.txt");
             input = new BufferedReader(new InputStreamReader(reader));
             loadFavorites();
+
+            LinearLayout favlayout = (LinearLayout) findViewById(R.id.favoritelayout);
+            LinearLayout chkboxlinlayout = (LinearLayout) findViewById(R.id.checkboxlayout);
+            for (int i =0; i<favorites.size(); i++) {
+                Button favbutton = (Button) new Button(this);
+                CheckBox cb = (CheckBox) new CheckBox(this);
+                favbutton.setId(i);
+                cb.setId(i);
+
+
+
+                String bartext=favorites.get(i).getName();
+                favbutton.setText(bartext);
+                //barlist.add
+                favlayout.addView(favbutton);
+                chkboxlinlayout.addView(cb);
+            }
             //BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        /*LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         RelativeLayout mContainer = (RelativeLayout) inflater.inflate(R.layout.activity_favorites, null);
         lv = (ListView)findViewById(R.id.listView);
-        displayFavorites();
-        setContentView(R.layout.activity_favorites);
+        //displayFavorites();
+        setContentView(R.layout.activity_favorites);*/
 
 
 
     }
-    private void displayFavorites(){
+    /*private void displayFavorites(){
 
 
         favAdapter = new FavoritesAdapter(favorites,this);
         //ListView listView = (ListView)findViewById(R.id.listView);
         lv.setAdapter(favAdapter);
 
-    }
+    }*/
     public void searchmethod(View veiw){
                 Intent activityChangeIntent = new Intent(Favorites.this, Search.class);
                 Favorites.this.startActivity(activityChangeIntent);

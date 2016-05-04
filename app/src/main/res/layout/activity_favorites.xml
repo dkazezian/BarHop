@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-        <include android:id="@+id/toolbar" layout="@layout/toolbar" />
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="110px">
-        <ListView
-            android:id="@+id/listView"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/overalllayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="false"
-            android:layout_alignParentLeft="false">
-        </ListView>
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/favoritelayout"
+                android:layout_width="252dp"
+                android:layout_height="518dp"
+                android:orientation="vertical">
 
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/checkboxlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:textSize="30px" >
-    </TextView>
-
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <include android:id="@+id/toolbar" layout="@layout/toolbar" />
+</RelativeLayout>
+<!--
     <CheckBox
         android:id="@+id/chk_box"
         android:layout_width="wrap_content"
@@ -37,9 +38,4 @@
         android:layout_marginLeft="4px"
         android:layout_marginRight="10px"
         android:checked="false">
-    </CheckBox>
-
-
-
-    </RelativeLayout>
-</RelativeLayout>
+    </CheckBox>-->

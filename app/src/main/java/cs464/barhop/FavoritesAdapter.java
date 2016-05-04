@@ -28,7 +28,7 @@ public class FavoritesAdapter extends ArrayAdapter<Favorite> {
         public TextView favoriteName;
         public CheckBox chkBox;
     }
-    @Override
+    /*@Override
     public View getView(int position, View convertView, ViewGroup parent){
 
         View v = convertView;
@@ -51,5 +51,5 @@ public class FavoritesAdapter extends ArrayAdapter<Favorite> {
         holder.chkBox.setTag(p);
         return v;
 
-    }
+    }*/
 }
