@@ -12,9 +12,9 @@
 
 
     <ImageButton
-        android:src="@drawable/search"
+        android:src="@drawable/search2"
         android:layout_width="wrap_content"
-        android:layout_height="250px"
+        android:layout_height="wrap_content"
         android:text="@string/bottom_bar_search"
         android:id="@+id/search"
 
@@ -23,10 +23,8 @@
         android:adjustViewBounds="false"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/nearbyMe"
-        android:layout_marginTop="54dp"
-        android:layout_alignEnd="@+id/nearbyMe"
-        android:layout_marginBottom="101dp"
-        android:layout_above="@+id/nearbyMe" />
+        android:layout_marginTop="42dp"
+        android:layout_alignEnd="@+id/nearbyMe" />
 
     <ImageButton
 
@@ -38,21 +36,19 @@
         android:id="@+id/nearbyMe"
         android:background="#33cc33"
         android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/favorites" />
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:src="@drawable/favi1"
         android:layout_width="wrap_content"
-        android:layout_height="250px"
+        android:layout_height="wrap_content"
         android:text="@string/bottom_bar_favorites"
         android:id="@+id/favorites"
 
         android:background="#33cc33"
-        android:layout_marginTop="54dp"
-        android:layout_below="@+id/nearbyMe"
+        android:layout_marginBottom="36dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="57dp"
-        android:layout_marginEnd="47dp"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignStart="@+id/nearbyMe"
+        android:layout_alignEnd="@+id/nearbyMe" />
 
 </RelativeLayout>
