@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,7 +31,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Favorites extends ListActivity {
+public class Favorites extends ListActivity implements android.widget.CompoundButton.OnCheckedChangeListener{
+    ListView lv;
+    ArrayList<Favorite> favoritesList;
+    FavoritesAdapter favAdapter;
     public int lineNumber;
     public String BarName;
     //  public String[] Bars;
@@ -64,7 +68,16 @@ public class Favorites extends ListActivity {
         }
 
     }
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
+        int pos = lv.getPositionForView(buttonView);
+        if(pos != ListView.INVALID_POSITION){
+            Favorite p = favorites.get(pos);
+            p.setSelected(isChecked);
+        }
 
+
+    }
 
     private void RemoveFavorites() {
         // Handle app bar item clicks here. The app bar
@@ -190,27 +203,28 @@ public class Favorites extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_favorites);
         try {
 
             reader = getAssets().open("myFavorites.txt");
             input = new BufferedReader(new InputStreamReader(reader));
             loadFavorites();
-            values = getFavorites();
             //BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        String[] barNames = new String[values.size()];
-        for (int i = 0; i < values.size(); i++) {
-            barNames[i] = values.get(i);
-        }
-        ArrayAdapter<String> faveAdapter= new ArrayAdapter<String>(getListView().getContext(), android.R.layout.simple_selectable_list_item, barNames);
-        getListView().setAdapter((ListAdapter) faveAdapter);
+        lv = (ListView)findViewById(R.id.listView);
 
 
-        setContentView(R.layout.activity_favorites);
+
+
+    }
+    private void displayFavorites(){
+
+
+        favAdapter = new FavoritesAdapter(favorites,this);
+        //ListView listView = (ListView)findViewById(R.id.listView);
+        lv.setAdapter(favAdapter);
 
     }
     public void searchmethod(View veiw){
@@ -250,14 +264,6 @@ public class Favorites extends ListActivity {
         //donothing
     }
 
-    private ArrayList<String> getFavorites() {
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < favorites.size(); i++) {
-            list.add(favorites.get(i).Name);
-        }
-        // Initially select one of the items
-        // list.get(1).setSelected(true);
-        return list;
-    }
+
 
 }
