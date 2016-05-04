@@ -100,7 +100,7 @@ public class Search extends AppCompatActivity {
     }
     public ArrayList<Integer> searchalgorithm(String day){
         ArrayList<Integer> results=new ArrayList<Integer>();
-        String filename = "barpageexample"; //Database filename
+        String filename = "bars.txt"; //Database filename
         String line = null;
         String searchstring = etext.getText().toString();
         System.out.print("The text is " + searchstring);
@@ -174,7 +174,7 @@ public class Search extends AppCompatActivity {
     private boolean findspecialOnDay(int linenumber, int day){
         boolean bool=false;
         String specialsline="";
-        String filename = "barpageexample";
+        String filename = "bars.txt";
         Scanner s = null;
         Scanner s2=null;
         try {
@@ -218,7 +218,7 @@ public class Search extends AppCompatActivity {
 
     private String findBarNameByLineNumber(int linenumber){
         String barname="";
-        String filename = "/BarHop/app/assets/barpageexample";
+        String filename = "/BarHop/app/assets/bars.txt";
         Scanner s = null;
         try {
             s = new Scanner(new BufferedReader(new FileReader(filename)));

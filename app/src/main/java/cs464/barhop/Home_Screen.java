@@ -41,6 +41,16 @@ public class Home_Screen extends AppCompatActivity {
                 results.add(2);
                 results.add(12);
                 results.add(22);
+                results.add(32);
+                results.add(42);
+                results.add(52);
+                results.add(62);
+                results.add(72);
+                results.add(82);
+                results.add(92);
+                results.add(102);
+                results.add(112);
+                results.add(122);
                 Bundle b = new Bundle();
                 b.putIntegerArrayList("searchresults", results);
                 intent.putExtras(b);

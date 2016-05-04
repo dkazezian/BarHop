@@ -110,7 +110,7 @@ public class Bar_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar_profile);
         try {
-            reader = getAssets().open("barpageexample");
+            reader = getAssets().open("bars.txt");
             input = new BufferedReader(new InputStreamReader(reader));
             parsebarinfo(1);
             final TextView namebox = (TextView) findViewById(R.id.textView);

@@ -1,0 +1,130 @@
+2
+Avagadro's Number
+605 S Mason St.,Fort Collins,CO,80524
+7am-11pm
+970-493-5555
+#music,#shows,#food,#beer,#liquor
+4 4 4 3 5,5 3 4 4 3,4 5 3 4 5,2 3 4 3 4
+$4 Cocktails,Live Music;None;None;$2 Draft Beers;None;None;None
+Gluten-free bear~$5.00,Mead~$3.50;Burgers~$6.00,Pasta~$4.75
+.7m
+12
+Road 34 Deli & Tavern
+1213 W Elizabeth St.,Fort Collins,CO,80521
+11am-2am
+970-221-3434
+#karaoke,#food,#liquor,#beer
+3 4 4 3 4,3 3 3 5 5,3 4 5 4 5,4 5 5 5 4
+None;None;Karaoke Night;None;None;None;$3 Burgers
+;6in Sub~$5.50,Ham Sandwich~$4.50
+.9m
+22
+Krazy Karl's Pizza
+1124 W Elizabeth St.,Fort Collins,CO,80521
+10:30am-3am
+970-224-2000
+#pizza,#liquor,#beer,#sports,#food
+5 5 5 5 5,4 5 4 5 4,3 4 5 3 4,2 4 3 5 4
+None;Penny Pitchers,Trivia Night;None;None;$3 Grinders;None;None
+Gluten-free beer~$4.00;Small Pizza~$6.00,Medium Pizza~$8.00,Large Pizza~$10.00
+.9m
+32
+Fuzzy's Taco Shop
+1335 W Elizabeth St.,Fort Collins,CO,80521
+8am-12am
+970-407-8226
+#tacos,#margaritas,#liquor,#beer,#food
+5 3 3 4 2,4 2 4 5 2,1 3 5 3 4,2 3 4 4 3
+$2 Margaritas;None;$1 Pitchers;None;None;None;None
+Gluten-Free Beer~$3.00,Margaritas~$4.00;Tacos~$2.00,Enchiladas~$4.00
+1.0m
+42
+Three Four Beer Co.
+829 S Shields St. #100,Fort Collins,CO,80521
+11am-2am
+970-682-1560
+#brewery,#beer,#sports
+3 3 3 3 3,4 3 4 3 5,5 3 3 4 4,3 4 4 4 3
+None;None;None;None;Brewery Tours,$1 Drafts;$2 Pitchers;None
+Jarritos~$2.00;Steak~$4.00,BBQ Chicken~$4.00
+1.7m
+52
+Restaurant 415
+415 South Mason St.,Fort Collins,CO,80524
+11am-10pm
+970-407-0415
+#restaurant,#food,#beer,#cocktails,#gluten-free
+4 4 5 4 3,3 3 4 4 5,4 4 3 4 5,5 4 3 4 4
+None;$3 Enchiladas;None;$5 Burritos;None;None;None
+Gluten-Free Beer~$4.00,Milkshakes~$3.00;Salad~$4.00,Cheeseburger~$5.00,Fries~$4.00
+2.2m
+62
+Tony's Bar
+224 S College Ave.,Fort Collins,CO,80524
+11am-2am
+970-484-6969
+#billiards,#pool,#chill,#food,#beer,#sports
+5 5 5 5 5,5 4 5 4 5,4 4 4 4 5,4 5 5 4 4
+$2 Pool Night,$2 Drafts;Karaoke Night,Penny Pitchers;None;None;None;None;None
+;Burgers~$3.00,Fries~$2.00
+2.4m
+72
+Rio Grande Mexian Restaurant
+143 W Mountain Ave.,Fort Collins,CO,80524
+11am-10pm
+970-224-5428
+#restaurant,#mexican,#beer,#liquor,#margaritas
+4 4 5 4 5,4 5 5 4 3,3 4 5 4 4,3 4 4 4 5
+None;None;$4 Margaritas;None;None;None;None
+Cocktails~$4.00,Tequila~$3.00;Enchiladas~$6.00,Fajitas~$6.75
+2.5m
+82
+The Crown Pub
+134 S College Ave.,Fort Collins,CO,80524
+11am-2am
+970-484-5929
+#food,#liquor,#beer,#cocktails
+3 3 3 4 3,3 4 4 5 4,3 4 5 5 5,3 3 2 3 4
+None;Blind Date Night;None;None;$2 Cocktails;None;None
+Cocktails~$3.00,Pitchers~$2.00;Burgers~$4.75,Pizza~$8.75
+2.5m
+92
+Lucky Joe's Sidewalk Saloon
+25 Old Town Square,Fort Collins,CO,80524
+11am-2am
+970-493-2213
+#western,#patio,#music,#food,#liquor,#beer
+4 4 4 5 5,4 5 5 4 5,4 4 5 3 4,4 5 5 5 5
+Live Music Night,$2 Burgers;None;$4 Guinness Pints;None;$2 Whiskeys;None;None
+Bud Light~$2.00,Wine~$3.00;Burgers~$3.00,Pasta~$4.00
+2.7m
+102
+Bondi Beach Bar
+11 Old Town Square,Fort Collins,CO,80524
+5pm-2am
+970-224-4100
+#beach,#themed,#patio,#dancing,#beer,#liquor
+4 4 4 3 3,4 3 4 3 4,4 5 5 3 2,3 3 3 2 4
+Limbo Night,$2 Draft Beers;None;None;None;Karaoke Night;None;None
+Cocktails~$3.00;Chicken Burgers~$4.00;Steaks~$5.00
+2.8m
+112
+The Yeti Bar and Grill
+23 Old Town Square,Fort Collins,CO,80521
+11am-2am
+970-482-9384
+#grill,#trivia,#games,#dancing,#beer,#liquor
+3 2 3 4 3,2 3 2 2 5,3 4 2 3 4,4 5 5 3 1
+Trivia Night;None;Game Night;None;$3 Mimosas;None;None
+Beer~$3.00,Margaritas~$4.00;Philly Cheesesteak~$5.75,Buffalo Wings~$4.00
+2.9m
+122
+Fusion Nightclub
+351 Linden St. #140,Fort Collins,CO,80524
+5pm-2am
+303-249-1263
+#music,#events,#dancing,#salsa,#beer,#liquor,#nightclub
+3 3 3 3 2,2 2 3 4 4,2 3 4 3 3,1 3 2 4 1
+Salsa Night,$1 Cocktails;None;None;None;College Night;Live Music Night,Bottomless Drinks;None
+Screwdrivers~$4.00,Margaritas~$3.00;Chips and Salsa~$3.00,Chicken Wings~$5.00
+3.1m
