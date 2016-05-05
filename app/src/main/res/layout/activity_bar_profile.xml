@@ -12,12 +12,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="55dp"
     tools:context="cs464.barhop.Bar_profile"
-    android:layout_marginBottom="50dp">
+    android:layout_marginBottom="50dp"
+    android:id="@+id/relativeLayout3">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/relativeLayout">
+        android:layout_above="@+id/relativeLayout"
+        android:id="@+id/relativeLayout2">
 
         <TextView
             android:layout_width="wrap_content"
@@ -104,6 +106,7 @@
             android:layout_alignTop="@+id/textView12"
             android:layout_marginTop="4dp"
             android:layout_alignParentBottom="true" />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -184,6 +187,21 @@
     </RelativeLayout>
 
 
+
 </RelativeLayout>
-<include android:id="@+id/toolbar" layout="@layout/toolbar" />
-    </RelativeLayout>
+    <ToggleButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:id="@+id/toggleButton"
+        style="@style/toggleButton"
+        android:background="@drawable/ic_toggle"
+        android:checked="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignTop="@+id/relativeLayout3"
+        android:layout_alignRight="@+id/relativeLayout3"
+        android:layout_alignParentTop="true" />
+
+    <include android:id="@+id/toolbar" layout="@layout/toolbar" />
+
+</RelativeLayout>
