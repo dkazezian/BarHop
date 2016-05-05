@@ -209,7 +209,7 @@ public class Favorites extends AppCompatActivity implements android.widget.Compo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_favorites);
 
 
         try {
@@ -217,7 +217,10 @@ public class Favorites extends AppCompatActivity implements android.widget.Compo
             reader = getAssets().open("myFavorites.txt");
             input = new BufferedReader(new InputStreamReader(reader));
             loadFavorites();
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
+            layoutParams.setMargins(0, 0, 0, 50);
             LinearLayout favlayout = (LinearLayout) findViewById(R.id.favoritelayout);
             LinearLayout chkboxlinlayout = (LinearLayout) findViewById(R.id.checkboxlayout);
             for (int i =0; i<favorites.size(); i++) {
@@ -232,7 +235,8 @@ public class Favorites extends AppCompatActivity implements android.widget.Compo
                 favbutton.setText(bartext);
                 //barlist.add
                 favlayout.addView(favbutton);
-                chkboxlinlayout.addView(cb);
+                chkboxlinlayout.addView(cb,layoutParams);
+
             }
             //BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
         } catch (IOException e) {
@@ -244,7 +248,7 @@ public class Favorites extends AppCompatActivity implements android.widget.Compo
         RelativeLayout mContainer = (RelativeLayout) inflater.inflate(R.layout.activity_favorites, null);
         lv = (ListView)findViewById(R.id.listView);
         //displayFavorites();
-        setContentView(R.layout.activity_favorites);*/
+        */
 
 
 

@@ -13,7 +13,7 @@
             android:orientation="horizontal">
             <LinearLayout
                 android:id="@+id/favoritelayout"
-                android:layout_width="252dp"
+                android:layout_width="330dp"
                 android:layout_height="518dp"
                 android:orientation="vertical">
 
