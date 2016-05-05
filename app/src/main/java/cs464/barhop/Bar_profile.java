@@ -30,6 +30,7 @@ public class Bar_profile extends AppCompatActivity {
     private String menu="";
     private InputStream reader;
     private BufferedReader input;
+    Bundle b = null;
 
 
     private void parsebarinfo(int linenumber){
@@ -112,7 +113,9 @@ public class Bar_profile extends AppCompatActivity {
         try {
             reader = getAssets().open("bars.txt");
             input = new BufferedReader(new InputStreamReader(reader));
-            parsebarinfo(1);
+            b = getIntent().getExtras();
+            int lineNumber = b.getInt("lineNum");
+            parsebarinfo(lineNumber);
             final TextView namebox = (TextView) findViewById(R.id.textView);
             final TextView addressbox = (TextView) findViewById(R.id.textView6);
             final TextView hoursbox = (TextView) findViewById(R.id.textView9);

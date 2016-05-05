@@ -33,7 +33,7 @@ public class Searchresults extends AppCompatActivity {
     Bundle b = null;
     //AssetManager assetManager = getAssets();
     private InputStream input;
-    private ArrayAdapter<Button> listAdapter;
+    private ArrayList<Integer> linenums;
 
     public static boolean isNumeric(String str){
         try{
@@ -49,10 +49,10 @@ public class Searchresults extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchresults);
+        linenums=new ArrayList<Integer>();
         b = getIntent().getExtras();
         results=b.getIntegerArrayList("searchresults");
         ArrayList <Button> buttonarray=new ArrayList<Button>();
-        listAdapter = new ArrayAdapter<Button>(this, R.layout.buttonlayout, buttonarray);
         try {
                 input = getAssets().open("bars.txt");
                 reader = new BufferedReader(new InputStreamReader(input));
@@ -84,6 +84,22 @@ public class Searchresults extends AppCompatActivity {
                     barbutton.setText(bartext);
                     //barlist.add
                     linlayout.addView(barbutton);
+                    linenums.add(linenumber);
+                    barbutton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            int numberofLine = linenums.get(linenums.size()-1);
+                            Intent intent = new Intent(Searchresults.this, Bar_profile.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("lineNum", numberofLine);
+                            intent.putExtras(bundle);
+                            Searchresults.this.startActivity(intent);
+                            finish();
+
+                        }
+                    });
+
+
                     input = getAssets().open("bars.txt");
                     reader = new BufferedReader(new InputStreamReader(input));
                 }
@@ -101,17 +117,27 @@ public class Searchresults extends AppCompatActivity {
         Searchresults.this.startActivity(activityChangeIntent);
     }
     public void nearbymethod(View veiw){
-        Intent intent = new Intent(Searchresults.this, Searchresults.class);
-        ArrayList<Integer> results= new ArrayList<Integer>();
-        results.add(2);
-        results.add(12);
-        results.add(22);
-        Bundle b = new Bundle();
-        b.putIntegerArrayList("searchresults", results);
-        intent.putExtras(b);
-        Searchresults.this.startActivity(intent);
-        finish();
-    }
+                Intent intent = new Intent(Searchresults.this, Searchresults.class);
+                ArrayList<Integer> results= new ArrayList<Integer>();
+                results.add(1);
+                results.add(11);
+                results.add(21);
+                results.add(31);
+                results.add(41);
+                results.add(51);
+                results.add(61);
+                results.add(71);
+                results.add(81);
+                results.add(91);
+                results.add(101);
+                results.add(111);
+                results.add(121);
+                Bundle b = new Bundle();
+                b.putIntegerArrayList("searchresults", results);
+                intent.putExtras(b);
+                Searchresults.this.startActivity(intent);
+                finish();
+}
     public void favemethod(View veiw){
         Intent activityChangeIntent = new Intent(Searchresults.this, Favorites.class);
         Searchresults.this.startActivity(activityChangeIntent);
