@@ -46,10 +46,7 @@ public class Favorites extends AppCompatActivity {
     //  public String[] Bars;
     // private List<Favorite>;
     public ArrayList<String> values;
-    public ArrayList<Favorite> favorites = new ArrayList<>();
-    public ArrayList<String> Barnames=new ArrayList<String>();
-    public ArrayList<String> LineNums=new ArrayList<String>();
-    public ArrayList<CheckBox> checks=new ArrayList<CheckBox>();
+    Favorite gs;
 
 
    /* @Override
@@ -65,8 +62,8 @@ public class Favorites extends AppCompatActivity {
 */
 
     public void addbartofave(String linenum, String barname){
-        Barnames.add(barname);
-        LineNums.add(linenum);
+        gs.getname().add(barname);
+        gs.getlinenum().add(linenum);
         displayfave();
 
 
@@ -84,17 +81,17 @@ public class Favorites extends AppCompatActivity {
             ((LinearLayout) favlayout).removeAllViews();
         if(((LinearLayout) chkboxlinlayout).getChildCount() > 0)
             ((LinearLayout) chkboxlinlayout).removeAllViews();
-        for (int i =0; i<Barnames.size(); i++) {
+        for (int i =0; i<gs.getname().size(); i++) {
             Button favbutton = (Button) new Button(this);
             CheckBox cb = (CheckBox) new CheckBox(this);
             favbutton.setId(i);
             cb.setId(i);
-            String bartext=Barnames.get(i);
+            String bartext=gs.getname().get(i);
             favbutton.setText(bartext);
             //barlist.add
             favlayout.addView(favbutton);
             chkboxlinlayout.addView(cb,layoutParams);
-            checks.add(cb);
+            gs.getchecks().add(cb);
         }
 
     }
@@ -104,20 +101,20 @@ public class Favorites extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        gs = (Favorite) getApplication();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
 
-        Barnames.add("Test");
-        LineNums.add("22");
         displayfave();
         final Button remove = (Button) findViewById(R.id.buttonremove);
         remove.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                for (int i=0; i<checks.size(); i++){
-                    if (checks.get(i).isChecked()){
-                        Barnames.remove(i);
-                        LineNums.remove(i);
-                        checks.remove(i);
+                for (int i=0; i<gs.getchecks().size(); i++){
+                    if (gs.getchecks().get(i).isChecked()){
+                        gs.getname().remove(i);
+                        gs.getlinenum().remove(i);
+                        gs.getchecks().remove(i);
                         i--;
                     }
                 }
