@@ -106,6 +106,8 @@ public class Search extends AppCompatActivity {
         System.out.print("The text is " + searchstring);
         String delims = "[ ]+";
         String[] tokens = searchstring.split(delims);
+        BufferedReader reader = null;
+        InputStream input;
         for (int i = 0; i<tokens.length; i++){//Get search token so have to search database
             System.out.print("token is " + tokens[i]);
             int linecount = 0;
@@ -113,16 +115,23 @@ public class Search extends AppCompatActivity {
             Scanner s = null;
             Scanner s2 = null;
             try {
-                s = new Scanner(new BufferedReader(new FileReader(filename)));
-                while (s.hasNextLine()) {
-                    String fullline=s.nextLine();
+//                s = new Scanner(
+                //BufferedReader b = new BufferedReader(new FileReader(filename));
+                input = getAssets().open(filename);
+                reader = new BufferedReader(new InputStreamReader(input));
+                String templine = "";
+                while ((templine) != null) {
+                    String fullline=reader.readLine();
                     s2 = new Scanner(fullline);
+                    if (fullline.contains(tokens[i])){
+                        boolean holyshit=true;
+                    }
                     barnamelinenumber=((linecount/10)*10)+1;
                     while(s2.hasNext()){
                         String word= s2.next();
-                        if (tokens[i].equals(word)) {
+                        if (tokens[i].contains(word)) {
                             if (!results.contains(barnamelinenumber)) {
-                                if(day.equals("-1")) {
+                                if(day.equals("All days")) {
                                     results.add(barnamelinenumber);
                                 }
                                 else{
@@ -164,7 +173,7 @@ public class Search extends AppCompatActivity {
                     }
                     linecount++;
                 }
-            } catch(FileNotFoundException e){
+            } catch(Exception e){
                 e.printStackTrace();
             }
 

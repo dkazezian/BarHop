@@ -26,13 +26,13 @@ import java.util.Scanner;
 public class Searchresults extends AppCompatActivity {
     int linecount = 0;
     int barnamelinenumber=0;
-    BufferedReader input = null;
+    BufferedReader reader = null;
     String barname = "";
     String distance = "";
     ArrayList<Integer> results;
     Bundle b = null;
     //AssetManager assetManager = getAssets();
-    private InputStream reader;
+    private InputStream input;
     private ArrayAdapter<Button> listAdapter;
 
     public static boolean isNumeric(String str){
@@ -54,8 +54,8 @@ public class Searchresults extends AppCompatActivity {
         ArrayList <Button> buttonarray=new ArrayList<Button>();
         listAdapter = new ArrayAdapter<Button>(this, R.layout.buttonlayout, buttonarray);
         try {
-                reader = getAssets().open("bars.txt");
-                input = new BufferedReader(new InputStreamReader(reader));
+                input = getAssets().open("bars.txt");
+                reader = new BufferedReader(new InputStreamReader(input));
 
 
                 //ArrayAdapter<Button> baradapter =
@@ -68,24 +68,24 @@ public class Searchresults extends AppCompatActivity {
                     int linenumber = results.get(i);
 
                     while (go < linenumber) {
-                        input.readLine();
+                        reader.readLine();
                         go++;
                     }
-                    String barname = input.readLine();
-                    input.readLine();
-                    String hours = input.readLine();
-                    input.readLine();
-                    input.readLine();
-                    input.readLine();
-                    input.readLine();
-                    input.readLine();
-                    String distance = input.readLine();
+                    String barname = reader.readLine();
+                    reader.readLine();
+                    String hours = reader.readLine();
+                    reader.readLine();
+                    reader.readLine();
+                    reader.readLine();
+                    reader.readLine();
+                    reader.readLine();
+                    String distance = reader.readLine();
                     String bartext=barname+"\n Hours: "+hours+ "\n Distance: "+distance;
                     barbutton.setText(bartext);
                     //barlist.add
                     linlayout.addView(barbutton);
-                    reader = getAssets().open("bars.txt");
-                    input = new BufferedReader(new InputStreamReader(reader));
+                    input = getAssets().open("bars.txt");
+                    reader = new BufferedReader(new InputStreamReader(input));
                 }
             } catch (IOException e) {
                 e.printStackTrace();
