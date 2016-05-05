@@ -190,8 +190,8 @@
 
 </RelativeLayout>
     <ToggleButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="right"
         android:id="@+id/toggleButton"
         style="@style/toggleButton"
