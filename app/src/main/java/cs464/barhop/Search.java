@@ -115,62 +115,64 @@ public class Search extends AppCompatActivity {
             Scanner s = null;
             Scanner s2 = null;
             try {
-//                s = new Scanner(
-                //BufferedReader b = new BufferedReader(new FileReader(filename));
                 input = getAssets().open(filename);
                 reader = new BufferedReader(new InputStreamReader(input));
                 String templine = "";
                 while ((templine) != null) {
+                    boolean holyshit = false;
                     String fullline=reader.readLine();
-                    s2 = new Scanner(fullline);
-                    if (fullline.contains(tokens[i])){
-                        boolean holyshit=true;
-                    }
+                    //s2 = new Scanner(fullline);
+                    String lower = fullline.toLowerCase();
+                    CharSequence tokenlower = tokens[i].toLowerCase();
                     barnamelinenumber=((linecount/10)*10)+1;
-                    while(s2.hasNext()){
-                        String word= s2.next();
-                        if (tokens[i].contains(word)) {
-                            if (!results.contains(barnamelinenumber)) {
-                                if(day.equals("All days")) {
-                                    results.add(barnamelinenumber);
-                                }
-                                else{
-                                    int specialslinenumber=barnamelinenumber+7;
-                                    int daynumber=0;
-                                    switch(day) {
-                                        case "Mon":
-                                            daynumber=1;
-                                            if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
-                                            break;
-                                        case "Tue":
-                                            daynumber=2;
-                                            if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
-                                            break;
-                                        case "Wed":
-                                            daynumber=3;
-                                            if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
-                                            break;
-                                        case "Thur":
-                                            daynumber=4;
-                                            if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
-                                            break;
-                                        case "Fri":
-                                            daynumber=5;
-                                            if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
-                                            break;
-                                        case "Sat":
-                                            daynumber=6;
-                                            if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
-                                            break;
-                                        case "Sun":
-                                            daynumber=7;
-                                            if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
-                                            break;
-                                    }
+                    if (lower.contains(tokenlower)){
+                        holyshit=true;
+                        if (!results.contains(barnamelinenumber)) {
+                            if(day.equals("All days")) {
+                                results.add(barnamelinenumber);
+                            }
+                            else{
+                                int specialslinenumber=barnamelinenumber+7;
+                                int daynumber=0;
+                                switch(day) {
+                                    case "Mon":
+                                        daynumber=1;
+                                        if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
+                                        break;
+                                    case "Tue":
+                                        daynumber=2;
+                                        if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
+                                        break;
+                                    case "Wed":
+                                        daynumber=3;
+                                        if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
+                                        break;
+                                    case "Thur":
+                                        daynumber=4;
+                                        if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
+                                        break;
+                                    case "Fri":
+                                        daynumber=5;
+                                        if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
+                                        break;
+                                    case "Sat":
+                                        daynumber=6;
+                                        if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
+                                        break;
+                                    case "Sun":
+                                        daynumber=7;
+                                        if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
+                                        break;
                                 }
                             }
                         }
                     }
+                    /*while(s2.hasNext()){
+                        String word= s2.next();
+                        if (lower.contains(tokenlower)) {
+
+                        }
+                    }//Old code using a scanner*/
                     linecount++;
                 }
             } catch(Exception e){
@@ -186,12 +188,15 @@ public class Search extends AppCompatActivity {
         String filename = "bars.txt";
         Scanner s = null;
         Scanner s2=null;
+        BufferedReader reader = null;
+        InputStream input;
         try {
-            s = new Scanner(new BufferedReader(new FileReader(filename)));
+            input = getAssets().open(filename);
+            reader = new BufferedReader(new InputStreamReader(input));
             for (int i=0; i<linenumber; i++){
-                s.nextLine();
+                reader.readLine();
             }
-            specialsline=s.nextLine();
+            specialsline=reader.readLine();
             s2 = new Scanner(specialsline).useDelimiter(";");
             for (int k = 0; k<day; k++){
                 s2.next();
@@ -200,7 +205,7 @@ public class Search extends AppCompatActivity {
                 bool = false;
             }
             else bool = true;
-        } catch(FileNotFoundException e){
+        } catch(Exception e){
             e.printStackTrace();
         }
         return bool;
@@ -211,9 +216,19 @@ public class Search extends AppCompatActivity {
     public void nearbymethod(View veiw){
         Intent intent = new Intent(Search.this, Searchresults.class);
         ArrayList<Integer> results= new ArrayList<Integer>();
-        results.add(2);
-        results.add(12);
-        results.add(22);
+        results.add(1);
+        results.add(11);
+        results.add(21);
+        results.add(31);
+        results.add(41);
+        results.add(51);
+        results.add(61);
+        results.add(71);
+        results.add(81);
+        results.add(91);
+        results.add(101);
+        results.add(111);
+        results.add(121);
         Bundle b = new Bundle();
         b.putIntegerArrayList("searchresults", results);
         intent.putExtras(b);
@@ -225,7 +240,7 @@ public class Search extends AppCompatActivity {
         Search.this.startActivity(activityChangeIntent);
     }
 
-    private String findBarNameByLineNumber(int linenumber){
+    /*private String findBarNameByLineNumber(int linenumber){
         String barname="";
         String filename = "/BarHop/app/assets/bars.txt";
         Scanner s = null;
@@ -239,5 +254,5 @@ public class Search extends AppCompatActivity {
             e.printStackTrace();
         }
         return barname;
-    }
+    }*/
 }
