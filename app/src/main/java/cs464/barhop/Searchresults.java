@@ -85,19 +85,20 @@ public class Searchresults extends AppCompatActivity {
                     //barlist.add
                     linlayout.addView(barbutton);
                     linenums.add(linenumber);
-                    barbutton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            int numberofLine = linenums.get(linenums.size()-1);
-                            Intent intent = new Intent(Searchresults.this, Bar_profile.class);
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("lineNum", numberofLine);
-                            intent.putExtras(bundle);
-                            Searchresults.this.startActivity(intent);
-                            finish();
-
-                        }
-                    });
+//                    View.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            int numberofLine = linenums.get(linenums.size()-1);
+//                            Intent intent = new Intent(Searchresults.this, Bar_profile.class);
+//                            Bundle bundle = new Bundle();
+//                            bundle.putInt("lineNum", numberofLine);
+//                            intent.putExtras(bundle);
+//                            Searchresults.this.startActivity(intent);
+//                            finish();
+//
+//                        }
+//                    });
+                    barbutton.setOnClickListener(doSomethingOnClick(barbutton));
 
 
                     input = getAssets().open("bars.txt");
@@ -111,6 +112,22 @@ public class Searchresults extends AppCompatActivity {
         b.putInt("bar", 1);
         intent.putExtras(b);
 
+
+
+
+    }
+    View.OnClickListener doSomethingOnClick(final Button button){
+        return new View.OnClickListener(){
+            public void onClick(View v){
+                int numberofLine = linenums.get(linenums.size()-1);
+                Intent intent = new Intent(Searchresults.this, Bar_profile.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("lineNum", numberofLine);
+                intent.putExtras(bundle);
+                Searchresults.this.startActivity(intent);
+                finish();
+            }
+        };
     }
     public void searchmethod(View veiw){
         Intent activityChangeIntent = new Intent(Searchresults.this, Search.class);

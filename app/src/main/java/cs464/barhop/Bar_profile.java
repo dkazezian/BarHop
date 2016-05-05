@@ -148,6 +148,14 @@ public class Bar_profile extends AppCompatActivity {
                 }
             });
 
+            Button togButton = (Button) findViewById(R.id.toggleButton);
+            togButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
         }
         catch(IOException e){
             e.printStackTrace();
