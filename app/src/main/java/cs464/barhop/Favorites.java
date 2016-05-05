@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -36,7 +37,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Favorites extends AppCompatActivity implements android.widget.CompoundButton.OnCheckedChangeListener{
+public class Favorites extends AppCompatActivity {
     ListView lv;
     ArrayList<Favorite> favoritesList;
     //FavoritesAdapter favAdapter;
@@ -45,36 +46,13 @@ public class Favorites extends AppCompatActivity implements android.widget.Compo
     //  public String[] Bars;
     // private List<Favorite>;
     public ArrayList<String> values;
-    private InputStream reader;
-    private BufferedReader input;
-    private File myFavorites = new File("myFavorites.txt");
     public ArrayList<Favorite> favorites = new ArrayList<>();
-    public ArrayList<Boolean> selected = new ArrayList<>();
-    //public File myFavorites = "myFavorites.txt";
+    public ArrayList<String> Barnames=new ArrayList<String>();
+    public ArrayList<String> LineNums=new ArrayList<String>();
+    public ArrayList<CheckBox> checks=new ArrayList<CheckBox>();
 
 
-    private void loadFavorites() {
-
-        try {
-            String line = input.readLine();
-
-            while (line != null) {
-                String temp[] = line.split(",");
-                BarName=temp[0];
-                lineNumber = Integer.parseInt(temp[1]);
-                Favorite tem = new Favorite(BarName, lineNumber);
-                favorites.add(tem);
-                selected.add(false);
-
-
-                line = input.readLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-    @Override
+   /* @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
         int pos = lv.getPositionForView(buttonView);
         if(pos != ListView.INVALID_POSITION){
@@ -84,125 +62,43 @@ public class Favorites extends AppCompatActivity implements android.widget.Compo
 
 
     }
+*/
 
-    private void RemoveFavorites() {
-        // Handle app bar item clicks here. The app bar
-        // automatically handles clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        boolean p;
-        String REMOVE;
-        ArrayList<Integer> del = new ArrayList<>();
-        //   ArrayList<String> re = new ArrayList<>();
-        for (int i = 0; i < selected.size(); i++) {
-            p = selected.get(i);
-            if (p) {
-                REMOVE = favorites.get(i).Name + " " + favorites.get(i).LineNum;
-                removeLineFromFile(REMOVE);
-                favorites.remove(i);
-                del.add(i);
-            }
-        }
-        for (int k = del.size(); k > 0; k--) {
-            selected.remove(k);
+    public void addbartofave(String linenum, String barname){
+        Barnames.add(barname);
+        LineNums.add(linenum);
+        displayfave();
 
+
+
+    }
+    private void displayfave(){
+
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        layoutParams.setMargins(0, 0, 0, 50);
+        LinearLayout favlayout = (LinearLayout) findViewById(R.id.favoritelayout);
+        LinearLayout chkboxlinlayout = (LinearLayout) findViewById(R.id.checkboxlayout);
+        if(((LinearLayout) favlayout).getChildCount() > 0)
+            ((LinearLayout) favlayout).removeAllViews();
+        if(((LinearLayout) chkboxlinlayout).getChildCount() > 0)
+            ((LinearLayout) chkboxlinlayout).removeAllViews();
+        for (int i =0; i<Barnames.size(); i++) {
+            Button favbutton = (Button) new Button(this);
+            CheckBox cb = (CheckBox) new CheckBox(this);
+            favbutton.setId(i);
+            cb.setId(i);
+            String bartext=Barnames.get(i);
+            favbutton.setText(bartext);
+            //barlist.add
+            favlayout.addView(favbutton);
+            chkboxlinlayout.addView(cb,layoutParams);
+            checks.add(cb);
         }
 
     }
 
-    private void addFavorite(String Nam, int barId) {
-
-        try {
-
-
-            if (!myFavorites.isFile()) {
-                //System.out.println("Parameter is not an existing file");
-                return;
-            }
-
-            //Construct the new file that will later be renamed to the original filename.
-            File tempFile = new File(myFavorites.getAbsolutePath() + ".tmp");
-
-            BufferedReader br = new BufferedReader(new FileReader(myFavorites));
-            PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
-
-            String line;
-            Favorite Create = new Favorite(Nam, barId);
-            //Read from the original file and write to the new
-            //unless content matches data to be removed.
-            while ((line = br.readLine()) != null) {
-                if (favorites.contains(Create)) {
-                    return;
-                }
-
-            }
-            pw.println(line);
-            pw.close();
-            br.close();
-
-            //Delete the original file
-            if (!myFavorites.delete()) {
-                //System.out.println("Could not delete file");
-                return;
-            }
-
-            //Rename the new file to the filename the original file had.
-            // if (!tempFile.renameTo(myFavorites))
-            //System.out.println("Could not rename file");
-
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public void removeLineFromFile(String lineToRemove) {
-
-        try {
-
-
-            if (!myFavorites.isFile()) {
-                //System.out.println("Parameter is not an existing file");
-                return;
-            }
-
-            //Construct the new file that will later be renamed to the original filename.
-            File tempFile = new File(myFavorites.getAbsolutePath() + ".tmp");
-
-            BufferedReader br = new BufferedReader(new FileReader(myFavorites));
-            PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
-
-            String line;
-
-            //Read from the original file and write to the new
-            //unless content matches data to be removed.
-            while ((line = br.readLine()) != null) {
-
-                if (!line.trim().equals(lineToRemove)) {
-
-                    pw.println(line);
-                    pw.flush();
-                }
-            }
-            pw.close();
-            br.close();
-
-            //Delete the original file
-            if (!myFavorites.delete()) {
-                //System.out.println("Could not delete file");
-                return;
-            }
-
-            //Rename the new file to the filename the original file had.
-            if (!tempFile.renameTo(myFavorites)){}
-               // System.out.println("Could not rename file");
-
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
 
 
 
@@ -211,56 +107,27 @@ public class Favorites extends AppCompatActivity implements android.widget.Compo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
 
-
-        try {
-
-            reader = getAssets().open("myFavorites.txt");
-            input = new BufferedReader(new InputStreamReader(reader));
-            loadFavorites();
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
-            layoutParams.setMargins(0, 0, 0, 50);
-            LinearLayout favlayout = (LinearLayout) findViewById(R.id.favoritelayout);
-            LinearLayout chkboxlinlayout = (LinearLayout) findViewById(R.id.checkboxlayout);
-            for (int i =0; i<favorites.size(); i++) {
-                Button favbutton = (Button) new Button(this);
-                CheckBox cb = (CheckBox) new CheckBox(this);
-                favbutton.setId(i);
-                cb.setId(i);
-
-
-
-                String bartext=favorites.get(i).getName();
-                favbutton.setText(bartext);
-                //barlist.add
-                favlayout.addView(favbutton);
-                chkboxlinlayout.addView(cb,layoutParams);
-
+        Barnames.add("Test");
+        LineNums.add("22");
+        displayfave();
+        final Button remove = (Button) findViewById(R.id.buttonremove);
+        remove.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                for (int i=0; i<checks.size(); i++){
+                    if (checks.get(i).isChecked()){
+                        Barnames.remove(i);
+                        LineNums.remove(i);
+                        checks.remove(i);
+                        i--;
+                    }
+                }
+                displayfave();
             }
-            //BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        /*LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        RelativeLayout mContainer = (RelativeLayout) inflater.inflate(R.layout.activity_favorites, null);
-        lv = (ListView)findViewById(R.id.listView);
-        //displayFavorites();
-        */
+        });
 
 
 
     }
-    /*private void displayFavorites(){
-
-
-        favAdapter = new FavoritesAdapter(favorites,this);
-        //ListView listView = (ListView)findViewById(R.id.listView);
-        lv.setAdapter(favAdapter);
-
-    }*/
     public void searchmethod(View veiw){
                 Intent activityChangeIntent = new Intent(Favorites.this, Search.class);
                 Favorites.this.startActivity(activityChangeIntent);
