@@ -30,10 +30,16 @@ public class Favorite extends Application
     }
     public void removefave(String linenum, String barname){
         if(Barnames.contains(barname)){
+            isFave.remove(Barnames.indexOf(barname));
             Barnames.remove(barname);
             LineNums.remove(linenum);
-            isFave.remove(Barnames.indexOf(barname));
         }
+    }
+    public Boolean isfave(String barname){
+        if (Barnames.contains(barname)){
+            return true;
+        }
+        return false;
     }
 
 }

@@ -153,6 +153,10 @@ public class Bar_profile extends AppCompatActivity {
             });
 
             final ToggleButton togButton = (ToggleButton) findViewById(R.id.toggleButton);
+            Favorite gs=  (Favorite) getApplication();
+            if(gs.isfave(barname)){
+                togButton.setChecked(true);
+            }
             togButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
@@ -162,7 +166,7 @@ public class Bar_profile extends AppCompatActivity {
                     }
                     else{
                         Favorite gs=  (Favorite) getApplication();
-//                        gs.
+                         gs.removefave(finallinenumber, barname);
                     }
                 }
             });
