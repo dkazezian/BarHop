@@ -132,7 +132,7 @@ public class Search extends AppCompatActivity {
                                 results.add(barnamelinenumber);
                             }
                             else{
-                                int specialslinenumber=barnamelinenumber+7;
+                                int specialslinenumber=barnamelinenumber+6;
                                 int daynumber=0;
                                 switch(day) {
                                     case "Mon":
