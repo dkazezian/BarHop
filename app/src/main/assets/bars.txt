@@ -6,7 +6,7 @@ Avagadro's Number
 #music,#shows,#food,#beer,#liquor
 4 4 4 3 5,5 3 4 4 3,4 5 3 4 5,2 3 4 3 4
 $4 Cocktails,Live Music;None;None;$2 Draft Beers;None;None;None
-Gluten-free bear~$5.00,Mead~$3.50;Burgers~$6.00,Pasta~$4.75
+Gluten-free beer~$5.00,Mead~$3.50;Burgers~$6.00,Pasta~$4.75
 .7m
 12
 Road 34 Deli & Tavern
@@ -113,7 +113,7 @@ The Yeti Bar and Grill
 23 Old Town Square,Fort Collins,CO,80521
 11am-2am
 970-482-9384
-#grill,#trivia,#games,#dancing,#beer,#liquor
+#grill,#trivia,#games,#dancing,#beer,#liquor,#bigbootybitches
 3 2 3 4 3,2 3 2 2 5,3 4 2 3 4,4 5 5 3 1
 Trivia Night;None;Game Night;None;$3 Mimosas;None;None
 Beer~$3.00,Margaritas~$4.00;Philly Cheesesteak~$5.75,Buffalo Wings~$4.00

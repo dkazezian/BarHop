@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -35,15 +36,15 @@ public class Searchresults extends AppCompatActivity {
     //AssetManager assetManager = getAssets();
     private InputStream input;
 
-    public static boolean isNumeric(String str){
-        try{
+    public static boolean isNumeric(String str) {
+        try {
             int d = Integer.parseInt(str);
-        }
-        catch(NumberFormatException nfe){
+        } catch (NumberFormatException nfe) {
             return false;
         }
         return true;
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,11 @@ public class Searchresults extends AppCompatActivity {
         setContentView(R.layout.activity_searchresults);
         b = getIntent().getExtras();
         results=b.getIntegerArrayList("searchresults");
+        if(results.isEmpty()){
+            String noResults = "There were no results found.";
+            Toast.makeText(this, noResults, Toast.LENGTH_LONG).show();
+            return;
+        }
         ArrayList <Button> buttonarray=new ArrayList<Button>();
         try {
                 input = getAssets().open("bars.txt");

@@ -1,5 +1,8 @@
 package cs464.barhop;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.Scanner;
 
 import android.content.Context;
@@ -103,11 +106,17 @@ public class Search extends AppCompatActivity {
         String filename = "bars.txt"; //Database filename
         String line = null;
         String searchstring = etext.getText().toString();
+        searchstring = searchstring.trim();
+        boolean horyshit;
+        if (searchstring.isEmpty()){
+            horyshit = true;
+        }
         System.out.print("The text is " + searchstring);
         String delims = "[ ]+";
         String[] tokens = searchstring.split(delims);
         BufferedReader reader = null;
         InputStream input;
+
         for (int i = 0; i<tokens.length; i++){//Get search token so have to search database
             System.out.print("token is " + tokens[i]);
             int linecount = 0;
@@ -119,21 +128,27 @@ public class Search extends AppCompatActivity {
                 reader = new BufferedReader(new InputStreamReader(input));
                 String templine = "";
                 while ((templine) != null) {
-                    boolean holyshit = false;
                     String fullline=reader.readLine();
                     //s2 = new Scanner(fullline);
                     String lower = fullline.toLowerCase();
                     CharSequence tokenlower = tokens[i].toLowerCase();
                     barnamelinenumber=((linecount/10)*10)+1;
-                    if (lower.contains(tokenlower)){
-                        holyshit=true;
+                    if (lower.contains(tokenlower) || searchstring.isEmpty()){
                         if (!results.contains(barnamelinenumber)) {
                             if(day.equals("All days")) {
                                 results.add(barnamelinenumber);
                             }
                             else{
-                                int specialslinenumber=barnamelinenumber+6;
+//                                int specialslinenumber=barnamelinenumber+6;
+                                /*String weekDay;
+                                SimpleDateFormat dayFormat = new SimpleDateFormat("E", Locale.US);
+
+                                Calendar calendar = Calendar.getInstance();
+                                weekDay = dayFormat.format(calendar.getTime());
+                                day = weekDay;*/
+                                int specialslinenumber=barnamelinenumber+7;
                                 int daynumber=0;
+                                if(day.equals("Today")) day = "Fri";
                                 switch(day) {
                                     case "Mon":
                                         daynumber=1;
@@ -163,6 +178,7 @@ public class Search extends AppCompatActivity {
                                         daynumber=7;
                                         if (findspecialOnDay(specialslinenumber, daynumber)) results.add(barnamelinenumber);
                                         break;
+
                                 }
                             }
                         }
@@ -170,7 +186,6 @@ public class Search extends AppCompatActivity {
                     /*while(s2.hasNext()){
                         String word= s2.next();
                         if (lower.contains(tokenlower)) {
-
                         }
                     }//Old code using a scanner*/
                     linecount++;
@@ -184,26 +199,30 @@ public class Search extends AppCompatActivity {
     }
     private boolean findspecialOnDay(int linenumber, int day){
         boolean bool=false;
-        String specialsline="";
         String filename = "bars.txt";
         Scanner s = null;
         Scanner s2=null;
         BufferedReader reader = null;
         InputStream input;
         try {
+            String specialsline="";
             input = getAssets().open(filename);
             reader = new BufferedReader(new InputStreamReader(input));
             for (int i=0; i<linenumber; i++){
-                reader.readLine();
+                specialsline = reader.readLine();
             }
-            specialsline=reader.readLine();
-            s2 = new Scanner(specialsline).useDelimiter(";");
-            for (int k = 0; k<day; k++){
-                s2.next();
-            }
-            if (s2.next().equals("None")){
-                bool = false;
-            }
+            //specialsline=reader.readLine();
+//            s2 = new Scanner(specialsline).useDelimiter(";");
+//            for (int k = 1; k<day; k++){
+//                String temp = s2.next();
+//            }
+//            if (s2.next().equals("None")){
+//                bool = false;
+//            }
+//            else bool = true;
+            String[] specialsArray = specialsline.split(";");
+            String specialOfTheDay = specialsArray[day-1];
+            if(specialOfTheDay.equals("None")) bool = false;
             else bool = true;
         } catch(Exception e){
             e.printStackTrace();
