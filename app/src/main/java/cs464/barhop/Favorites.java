@@ -67,7 +67,7 @@ public class Favorites extends AppCompatActivity {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        layoutParams.setMargins(0, 0, 0, 50);
+        layoutParams.setMargins(0, 28, 0, 23);
         LinearLayout favlayout = (LinearLayout) findViewById(R.id.favoritelayout);
         LinearLayout chkboxlinlayout = (LinearLayout) findViewById(R.id.checkboxlayout);
         if(((LinearLayout) favlayout).getChildCount() > 0)

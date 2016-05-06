@@ -8,7 +8,8 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/buttonremove"
         android:layout_marginTop="46dp"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:id="@+id/scrollfaveoritieies">
         <LinearLayout
             android:id="@+id/overalllayout"
             android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             <LinearLayout
                 android:id="@+id/favoritelayout"
                 android:layout_width="330dp"
-                android:layout_height="462dp"
+                android:layout_height="460dp"
                 android:orientation="vertical">
 
             </LinearLayout>
