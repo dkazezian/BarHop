@@ -77,33 +77,35 @@ public class Searchresults extends AppCompatActivity {
                         go++;
                     }
                     String barname = reader.readLine();
-                    reader.readLine();
-                    String hours = reader.readLine();
-                    reader.readLine();
-                    reader.readLine();
-                    reader.readLine();
-                    reader.readLine();
-                    reader.readLine();
-                    String distance = reader.readLine();
-                    String bartext=barname+"\n Hours: "+hours+ "\n Distance: "+distance;
-                    barbutton.setText(bartext);
-                    //barlist.add
-                    final int templinenum = linenumber;
-                    barbutton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(Searchresults.this, Bar_profile.class);
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("lineNum", templinenum);
-                            bundle.putBoolean("showreview", true);
-                            intent.putExtras(bundle);
-                            Searchresults.this.startActivity(intent);
-                            finish();
+                    if(barname!=null) {
+                        reader.readLine();
+                        String hours = reader.readLine();
+                        reader.readLine();
+                        reader.readLine();
+                        reader.readLine();
+                        reader.readLine();
+                        reader.readLine();
+                        String distance = reader.readLine();
+                        String bartext = barname + "\n Hours: " + hours + "\n Distance: " + distance;
+                        barbutton.setText(bartext);
+                        //barlist.add
+                        final int templinenum = linenumber;
+                        barbutton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(Searchresults.this, Bar_profile.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("lineNum", templinenum);
+                                bundle.putBoolean("showreview", true);
+                                intent.putExtras(bundle);
+                                Searchresults.this.startActivity(intent);
+                                finish();
 
-                        }
-                    });
+                            }
+                        });
 
-                    linlayout.addView(barbutton);
+                        linlayout.addView(barbutton);
+                    }
                     input = getAssets().open("bars.txt");
                     reader = new BufferedReader(new InputStreamReader(input));
                 }
