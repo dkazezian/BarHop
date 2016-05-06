@@ -85,9 +85,39 @@ public class Favorites extends AppCompatActivity {
             favlayout.addView(favbutton);
             chkboxlinlayout.addView(cb,layoutParams);
             gs.getchecks().add(cb);
+            final int templinenum = Integer.parseInt(gs.getlinenum().get(i))-1;
+            favbutton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent = new Intent(Favorites.this, Bar_profile.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("lineNum", templinenum);
+                    intent.putExtras(bundle);
+                    Favorites.this.startActivity(intent);
+                    finish();
+
+                }
+            });
+
         }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
