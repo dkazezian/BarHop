@@ -161,7 +161,8 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="0dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="0dp"
+            android:layout_above="@+id/gonow">
 
             <TextView
                 android:id="@+id/InfoBox"
@@ -173,14 +174,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Review"
-            android:id="@+id/Review"
+            android:text="Go There Now"
+            android:id="@+id/gonow"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="115dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginEnd="88dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="124dp"
-            android:visibility="invisible"/>
+            android:layout_alignParentStart="true" />
 
 
 

@@ -2,6 +2,7 @@ package cs464.barhop;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -192,7 +193,17 @@ public class Bar_profile extends AppCompatActivity {
                     }
                 }
             });
-
+            final Button gonow = (Button) findViewById(R.id.gonow);
+            gonow.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    String newaddress= address.replace(" ", "+");
+                    String newbarname=barname.replace(" ", "+");
+                    String query = "http://maps.google.com/?q="+newbarname+"+"+newaddress;
+                    Uri uri = Uri.parse(query);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
+                }
+            });
         }
         catch(IOException e){
             e.printStackTrace();
