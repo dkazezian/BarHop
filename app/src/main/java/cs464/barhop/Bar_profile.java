@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.io.BufferedReader;
@@ -19,6 +20,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static android.widget.Toast.LENGTH_LONG;
 
 public class Bar_profile extends AppCompatActivity {
 
@@ -35,6 +38,7 @@ public class Bar_profile extends AppCompatActivity {
     private InputStream reader;
     private BufferedReader input;
     Bundle b = null;
+    private boolean showreview=true;
 
 
     private void parsebarinfo(int linenumber){
@@ -121,6 +125,9 @@ public class Bar_profile extends AppCompatActivity {
             input = new BufferedReader(new InputStreamReader(reader));
             b = getIntent().getExtras();
             int lineNumber = b.getInt("lineNum");
+            final int lineNumberForReview = lineNumber;
+            boolean tempboolean = b.getBoolean("showreview");
+            showreview = tempboolean;
             parsebarinfo(lineNumber);
             final TextView namebox = (TextView) findViewById(R.id.textView);
             final TextView addressbox = (TextView) findViewById(R.id.textView6);
@@ -146,6 +153,8 @@ public class Bar_profile extends AppCompatActivity {
                     menubutt.setBackgroundResource(R.color.gray);
                     speceventbutt.setBackgroundResource(R.color.lightgray);
                     reviewbutt.setBackgroundResource(R.color.lightgray);
+                    final Button makereview=(Button)findViewById(R.id.makereview);
+                    makereview.setVisibility(View.INVISIBLE);
                 }
             });
             final Button speceventbutt = (Button) findViewById(R.id.button3);
@@ -158,6 +167,8 @@ public class Bar_profile extends AppCompatActivity {
                     speceventbutt.setBackgroundResource(R.color.gray);
                     menubutt.setBackgroundResource(R.color.lightgray);
                     reviewbutt.setBackgroundResource(R.color.lightgray);
+                    final Button makereview=(Button)findViewById(R.id.makereview);
+                    makereview.setVisibility(View.INVISIBLE);
                 }
             });
             final Button reviewbutt = (Button) findViewById(R.id.button4);
@@ -170,6 +181,25 @@ public class Bar_profile extends AppCompatActivity {
                     reviewbutt.setBackgroundResource(R.color.gray);
                     speceventbutt.setBackgroundResource(R.color.lightgray);
                     menubutt.setBackgroundResource(R.color.lightgray);
+                    final Button makereview=(Button)findViewById(R.id.makereview);
+                    makereview.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            Intent reviewIntent = new Intent(Bar_profile.this, reviewbar.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("lineNum", lineNumberForReview);
+                            bundle.putBoolean("showreview", false);
+                            reviewIntent.putExtras(bundle);
+                            Bar_profile.this.startActivity(reviewIntent);
+                            finish();
+                        }
+                    });
+                    if(showreview==true) {
+                        makereview.setVisibility(View.VISIBLE);
+                    }
+                    else{
+                        makereview.setVisibility(View.INVISIBLE);
+
+                    }
                 }
             });
             speceventbutt.setBackgroundResource(R.color.gray);

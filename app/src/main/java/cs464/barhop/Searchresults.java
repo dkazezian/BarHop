@@ -95,6 +95,7 @@ public class Searchresults extends AppCompatActivity {
                             Intent intent = new Intent(Searchresults.this, Bar_profile.class);
                             Bundle bundle = new Bundle();
                             bundle.putInt("lineNum", templinenum);
+                            bundle.putBoolean("showreview", true);
                             intent.putExtras(bundle);
                             Searchresults.this.startActivity(intent);
                             finish();

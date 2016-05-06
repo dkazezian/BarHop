@@ -92,6 +92,7 @@ public class Favorites extends AppCompatActivity {
                     Intent intent = new Intent(Favorites.this, Bar_profile.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("lineNum", templinenum);
+                    bundle.putBoolean("showreview", true);
                     intent.putExtras(bundle);
                     Favorites.this.startActivity(intent);
                     finish();

@@ -139,16 +139,18 @@ public class Search extends AppCompatActivity {
                                 results.add(barnamelinenumber);
                             }
                             else{
-//                                int specialslinenumber=barnamelinenumber+6;
-                                /*String weekDay;
-                                SimpleDateFormat dayFormat = new SimpleDateFormat("E", Locale.US);
+                                //int specialslinenumber=barnamelinenumber+6;
+                                if (day.equals("Today")){
+                                    String weekDay;
+                                    SimpleDateFormat dayFormat = new SimpleDateFormat("EEE", Locale.US);
 
-                                Calendar calendar = Calendar.getInstance();
-                                weekDay = dayFormat.format(calendar.getTime());
-                                day = weekDay;*/
+                                    Calendar calendar = Calendar.getInstance();
+                                    weekDay = dayFormat.format(calendar.getTime());
+                                    day = weekDay;
+                                }
                                 int specialslinenumber=barnamelinenumber+7;
                                 int daynumber=0;
-                                if(day.equals("Today")) day = "Fri";
+                                //if(day.equals("Today")) day = "Fri";
                                 switch(day) {
                                     case "Mon":
                                         daynumber=1;
