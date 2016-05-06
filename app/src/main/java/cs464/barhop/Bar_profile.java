@@ -1,6 +1,7 @@
 package cs464.barhop;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -133,25 +134,46 @@ public class Bar_profile extends AppCompatActivity {
             tagsbox.setText(tags);
             infobox.setText(specevents);
 
+
             final Button menubutt = (Button) findViewById(R.id.button5);
             menubutt.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     infobox.setText(menu);
+                    final Button reviewbutt = (Button) findViewById(R.id.button4);
+                    final Button speceventbutt = (Button) findViewById(R.id.button3);
+                    final Button menubutt = (Button) findViewById(R.id.button5);
+                    menubutt.setBackgroundResource(R.color.gray);
+                    speceventbutt.setBackgroundResource(R.color.lightgray);
+                    reviewbutt.setBackgroundResource(R.color.lightgray);
                 }
             });
             final Button speceventbutt = (Button) findViewById(R.id.button3);
             speceventbutt.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     infobox.setText(specevents);
+                    final Button reviewbutt = (Button) findViewById(R.id.button4);
+                    final Button speceventbutt = (Button) findViewById(R.id.button3);
+                    final Button menubutt = (Button) findViewById(R.id.button5);
+                    speceventbutt.setBackgroundResource(R.color.gray);
+                    menubutt.setBackgroundResource(R.color.lightgray);
+                    reviewbutt.setBackgroundResource(R.color.lightgray);
                 }
             });
             final Button reviewbutt = (Button) findViewById(R.id.button4);
             reviewbutt.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     infobox.setText(reviews);
+                    final Button reviewbutt = (Button) findViewById(R.id.button4);
+                    final Button speceventbutt = (Button) findViewById(R.id.button3);
+                    final Button menubutt = (Button) findViewById(R.id.button5);
+                    reviewbutt.setBackgroundResource(R.color.gray);
+                    speceventbutt.setBackgroundResource(R.color.lightgray);
+                    menubutt.setBackgroundResource(R.color.lightgray);
                 }
             });
-
+            speceventbutt.setBackgroundResource(R.color.gray);
+            menubutt.setBackgroundResource(R.color.lightgray);
+            reviewbutt.setBackgroundResource(R.color.lightgray);
             final ToggleButton togButton = (ToggleButton) findViewById(R.id.toggleButton);
             Favorite gs=  (Favorite) getApplication();
             if(gs.isfave(barname)){

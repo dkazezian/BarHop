@@ -3,8 +3,8 @@
     <string name="prompt">All Days</string>
     <string name="spinner">All Days</string>
     <string-array name="day_array">
-        <item>Today</item>
         <item>All days</item>
+        <item>Today</item>
         <item>Mon</item>
         <item>Tue</item>
         <item>Wed</item>

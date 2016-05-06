@@ -122,24 +122,24 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reviews"
-            android:id="@+id/button4"
-            android:layout_weight="0.25" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Specials and Events"
+            android:text="Specials/Events"
             android:id="@+id/button3"
-            android:layout_weight="0.49"
-            android:textSize="10sp" />
+            android:layout_weight="0.13"
+            android:textSize="12sp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Menu"
             android:id="@+id/button5"
-            android:layout_weight="0.25" />
+            android:layout_weight="0.54" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reviews"
+            android:id="@+id/button4"
+            android:layout_weight="0.30" />
 
     </LinearLayout>
 
