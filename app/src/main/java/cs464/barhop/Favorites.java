@@ -63,7 +63,7 @@ public class Favorites extends AppCompatActivity {
 
 
     private void displayfave(){
-
+        gs.getchecks().clear();
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
@@ -89,7 +89,6 @@ public class Favorites extends AppCompatActivity {
             favbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     Intent intent = new Intent(Favorites.this, Bar_profile.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("lineNum", templinenum);
