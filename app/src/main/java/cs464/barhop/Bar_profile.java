@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,6 +29,7 @@ public class Bar_profile extends AppCompatActivity {
     private String reviews="";
     private String specevents="";
     private String menu="";
+    private String finallinenumber;
     private InputStream reader;
     private BufferedReader input;
     Bundle b = null;
@@ -35,11 +37,13 @@ public class Bar_profile extends AppCompatActivity {
 
     private void parsebarinfo(int linenumber){
         int go=0;
+        linenumber=linenumber-1;
         try {
             while (go < linenumber) {
                 input.readLine();
                 go++;
             }
+            finallinenumber=input.readLine();
             barname=input.readLine();
             address=input.readLine();
             hours=input.readLine();
@@ -148,11 +152,18 @@ public class Bar_profile extends AppCompatActivity {
                 }
             });
 
-            Button togButton = (Button) findViewById(R.id.toggleButton);
+            final ToggleButton togButton = (ToggleButton) findViewById(R.id.toggleButton);
             togButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
-
+                    if (togButton.isChecked()){
+                        Favorite gs=  (Favorite) getApplication();
+                        gs.addbartofave(finallinenumber, barname);
+                    }
+                    else{
+                        Favorite gs=  (Favorite) getApplication();
+//                        gs.
+                    }
                 }
             });
 
@@ -168,9 +179,19 @@ public class Bar_profile extends AppCompatActivity {
     public void nearbymethod(View veiw){
         Intent intent = new Intent(Bar_profile.this, Searchresults.class);
         ArrayList<Integer> results= new ArrayList<Integer>();
-        results.add(2);
-        results.add(12);
-        results.add(22);
+        results.add(1);
+        results.add(11);
+        results.add(21);
+        results.add(31);
+        results.add(41);
+        results.add(51);
+        results.add(61);
+        results.add(71);
+        results.add(81);
+        results.add(91);
+        results.add(101);
+        results.add(111);
+        results.add(121);
         Bundle b = new Bundle();
         b.putIntegerArrayList("searchresults", results);
         intent.putExtras(b);

@@ -15,8 +15,8 @@ Road 34 Deli & Tavern
 970-221-3434
 #karaoke,#food,#liquor,#beer
 3 4 4 3 4,3 3 3 5 5,3 4 5 4 5,4 5 5 5 4
-None;None;Karaoke Night;None;None;None;$3 Burgers
-;6in Sub~$5.50,Ham Sandwich~$4.50
+None;None;Karaoke Night;None;None;None;$3 Burgers;
+6in Sub~$5.50,Ham Sandwich~$4.50
 .9m
 22
 Krazy Karl's Pizza

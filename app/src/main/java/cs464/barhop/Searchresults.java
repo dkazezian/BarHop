@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,7 +34,6 @@ public class Searchresults extends AppCompatActivity {
     Bundle b = null;
     //AssetManager assetManager = getAssets();
     private InputStream input;
-    private ArrayList<Integer> linenums;
 
     public static boolean isNumeric(String str){
         try{
@@ -49,7 +49,6 @@ public class Searchresults extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchresults);
-        linenums=new ArrayList<Integer>();
         b = getIntent().getExtras();
         results=b.getIntegerArrayList("searchresults");
         ArrayList <Button> buttonarray=new ArrayList<Button>();
@@ -83,24 +82,21 @@ public class Searchresults extends AppCompatActivity {
                     String bartext=barname+"\n Hours: "+hours+ "\n Distance: "+distance;
                     barbutton.setText(bartext);
                     //barlist.add
+                    final int templinenum = linenumber;
+                    barbutton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(Searchresults.this, Bar_profile.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("lineNum", templinenum);
+                            intent.putExtras(bundle);
+                            Searchresults.this.startActivity(intent);
+                            finish();
+
+                        }
+                    });
+
                     linlayout.addView(barbutton);
-                    linenums.add(linenumber);
-//                    View.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            int numberofLine = linenums.get(linenums.size()-1);
-//                            Intent intent = new Intent(Searchresults.this, Bar_profile.class);
-//                            Bundle bundle = new Bundle();
-//                            bundle.putInt("lineNum", numberofLine);
-//                            intent.putExtras(bundle);
-//                            Searchresults.this.startActivity(intent);
-//                            finish();
-//
-//                        }
-//                    });
-                    barbutton.setOnClickListener(doSomethingOnClick(barbutton));
-
-
                     input = getAssets().open("bars.txt");
                     reader = new BufferedReader(new InputStreamReader(input));
                 }
@@ -116,19 +112,7 @@ public class Searchresults extends AppCompatActivity {
 
 
     }
-    View.OnClickListener doSomethingOnClick(final Button button){
-        return new View.OnClickListener(){
-            public void onClick(View v){
-                int numberofLine = linenums.get(linenums.size()-1);
-                Intent intent = new Intent(Searchresults.this, Bar_profile.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("lineNum", numberofLine);
-                intent.putExtras(bundle);
-                Searchresults.this.startActivity(intent);
-                finish();
-            }
-        };
-    }
+
     public void searchmethod(View veiw){
         Intent activityChangeIntent = new Intent(Searchresults.this, Search.class);
         Searchresults.this.startActivity(activityChangeIntent);

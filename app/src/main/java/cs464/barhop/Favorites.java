@@ -61,14 +61,7 @@ public class Favorites extends AppCompatActivity {
     }
 */
 
-    public void addbartofave(String linenum, String barname){
-        gs.getname().add(barname);
-        gs.getlinenum().add(linenum);
-        displayfave();
 
-
-
-    }
     private void displayfave(){
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
