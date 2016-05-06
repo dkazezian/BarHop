@@ -15,7 +15,18 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_weight="0.20"></RelativeLayout>
+            android:layout_weight="0.20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Search for Bars in Your Area"
+                android:id="@+id/textView2"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36dp" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -39,7 +50,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="261dp"
-        android:layout_weight="0.14">
+        android:layout_weight="0.19">
 
         <Spinner
             android:id="@+id/spinner"
